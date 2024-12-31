@@ -1,69 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>سنابس</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css"> <!--For simple style (nav)-->
+
 </head>
 <body>
     <header>
-     
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#events">Upcoming Events</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#join">Join Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-           <h1>Welcome to My Website</h1>
+        <div class="header-container">
+            <a href="#" class="logoINnav">
+                <div class="logo-inner">
+                    <img src="Assets/Synapse_logoo-١٠.png" alt="شعار الموقع">
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> من نحن</a></li>
+                    <li><a href="#"><i class="fas fa-hand-holding-heart"></i> خدماتنا</a></li>
+                    <li><a href="#"><i class="fas fa-lightbulb"></i> المبادرات</a></li>
+                    <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> ورش العمل</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </header>
 
-    <section id="banner">
-        <h2>Your Adventure Starts Here!</h2>
-        <p>Discover more with us.</p>
+    <script>
+        const header = document.querySelector('header');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('show');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                nav.classList.remove('show');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('show');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text-container" data-aos="fade-up">
+                <h1 class="hero-title">
+                    <span class="gradient-text">سنابس</span>
+                    <div class="subtitle-wrapper">
+                        <span class="subtitle">نبتكر لنرتقي بالمستقبل</span>
+                    </div>
+                </h1>
+                <p class="hero-description">
+                    نجمع بين العلم والابتكار لنصنع تغييراً إيجابياً في عالم التقنية والذكاء الاصطناعي، ونقود التحول الرقمي نحو آفاق جديدة
+                </p>
+                <div class="cta-container">
+                    <a href="#services" class="cta-button primary">
+                        <span>اكتشف خدماتنا</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="#about" class="cta-button secondary">
+                        <span>تعرف علينا</span>
+                        <i class="fas fa-users"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left">
+                <div class="tech-sphere">
+                    <div class="logo-container">
+                        <img src="Assets/Logo.jpg" alt="سنابس" class="logo"/>
+                        <div class="logo-shadow"></div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="float-item ai"><i class="fas fa-brain"></i></div>
+                        <div class="float-item data"><i class="fas fa-database"></i></div>
+                        <div class="float-item innovation"><i class="fas fa-lightbulb"></i></div>
+                        <div class="float-item tech"><i class="fas fa-microchip"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-orb"></div>
+            <div class="pattern-grid"></div>
+        </div>
+    </div>
+
+    <div class="divider-container">
+        <div class="gradient-banner"></div>
+        <div class="particles"></div>
+        <div class="wave"></div>
+        <div class="text-container">
+            <div class="arabic-text">
+                <div class="highlight-box">
+                    على مدى العصور استطاع العقل البشري أن يرتقي ليبدع!
+                </div>
+                <div class="highlight-box">
+                    فإذا عضنا باحثين عن مصدر، نرى شرارة التقاء العلم والابتكار "سنابس"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="services-container">
+        <div class="services-wrapper">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="service-title">تقديم دورات شاملة</h3>
+                <p class="service-description">
+                    تطوير دورات وورش عمل متخصصة في
+                    مجال الذكاء الاصطناعي تناسب مختلف
+                    المستويات والمهارات
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="service-title">حلول ذكاء اصطناعي</h3>
+                <p class="service-description">
+                    تطوير حلول مبتكرة باستخدام أحدث تقنيات
+                    الذكاء الاصطناعي وتطبيقاته
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="service-title">استشارات تقنية</h3>
+                <p class="service-description">
+                    استشارات متخصصة في مجال الذكاء الاصطناعي
+                    وتطبيقاته المختلفة
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are dedicated to providing top-notch services to our clients.</p>
+    
+    
+    
+    <section class="about-section">
+        <div class="about-grid">
+            <!-- Video Side -->
+            <!-- Logo Side -->
+        <div class="logo-side" >
+            <div class="logo-About">
+                <img src="Assets/Logo.jpg" alt="شعار سينابس" class="logo-image">
+                <div class="logo-overlay"></div>
+                <div class="logo-pattern"></div>
+                <!-- Decorative Elements -->
+               
+                <div class="corner-shape"></div>
+            </div>
+        </div>
+    
+            <!-- Content Side -->
+             
+            <div class="content-side" data-aos="fade-right">
+                <div class="about-title">
+                    <span class="title-pill">
+                        <span class="title-icon"><i class="fas fa-info-circle"></i></span>
+                        من نحن
+                    </span>
+                </div>
+                <br>
+                <div class="about-content">
+                    <p class="main-text reveal-text">
+                        على مر العصور، استطاع العقل البشري أن يرتقي بإبداعه
+                        ليصل إلى آفاق جديدة. نحن نسعى لاستكشاف مصدر هذا
+                        الإبداع الخلّاب ونرى فيه شرارة تجمع بين العلم والابتكار.
+                    </p>
+                    <p class="highlight-text reveal-text">
+                        في سينابس، هدفنا هو تحويل الأفكار الملهمة إلى
+                        إنجازات تعزز حياة الأفراد والمجتمعات.
+                    </p>
+                </div>
+                <!-- Added Features -->
+                <div class="features-strip">
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-brain"></i>
+                        <span>الابتكار</span>
+                    </div>
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>الإبداع</span>
+                    </div>
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-rocket"></i>
+                        <span>التطور</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <section id="events">
-        <h2>Upcoming Events</h2>
-        <p>Stay tuned for our exciting events coming soon!</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Service 1</li>
-            <li>Service 2</li>
-            <li>Service 3</li>
-        </ul>
-    </section>
-
-    <section id="statistics">
-        <h2>Statistics</h2>
-        <p>1000+ Clients Served | 500+ Projects Completed</p>
-    </section>
-
-    <section id="join">
-        <h2>Join Us</h2>
-        <p>Become a part of our growing community!</p>
-    </section>
-
-    <footer>
-        <section id="contact">
-            <h2>Contact Info</h2>
-            <p>Email: info@mywebsite.com</p>
-            <p>Phone: +123 456 7890</p>
-        </section>
-        <p>&copy; 2024 My Website. All Rights Reserved.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+    
+   
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+    </script>
 </body>
 </html>
