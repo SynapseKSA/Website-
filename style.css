@@ -1,0 +1,340 @@
+/* عام */
+body {
+    font-family: "Tajawal", Arial, sans-serif;;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    background-color: #f3f4f6;
+    text-align: center;
+}
+
+/* الرأس */
+.main-header {
+    background: linear-gradient(90deg, #e87d34, #84cd81);
+    padding: 20px;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 10px;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: white;
+}
+
+.header-text p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* التنقل */
+.main-nav {
+    background-color: #008a9e;
+    padding: 15px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* قسم البرامج والخدمات */
+.services-programs {
+    padding: 40px 20px;
+}
+
+.services-programs h2 {
+    font-size: 2rem;
+    color: #303030;
+    margin-bottom: 30px;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service {
+    background: linear-gradient(135deg, #fefefe, #d9f2e6);
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    color: #008a9e;
+    margin-bottom: 15px;
+}
+
+.service ul {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+}
+
+.service ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* قسم ورش العمل - تحديث */
+/* تصميم الكارد */
+.workshop-card {
+    background: linear-gradient(135deg, #ffffff, #e6fff2); /* خلفية متدرجة */
+    border-radius: 12px; /* زوايا دائرية */
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* تأثير الظل */
+    border: 1px solid #dcdcdc;
+    text-align: center;
+    flex: 0 0 300px; /* جعل كل كارد بعرض 300 بكسل */
+    margin: 0 10px;
+}
+
+/* الأسهم */
+.arrow {
+    background-color: #008a9e;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transform: none; /* لإصلاح انعكاس الاتجاه */
+}
+
+.arrow:hover {
+    background-color: #005f6b;
+}
+
+.left-arrow {
+    position: absolute;
+    left: 5%; /* اجعل السهم على الجهة اليسرى */
+    transform: rotate(180deg); /* قلب السهم ليشير لليسار */
+}
+
+.right-arrow {
+    position: absolute;
+    right: 5%; /* اجعل السهم على الجهة اليمنى */
+    transform: rotate(180deg);
+}
+
+/* إصلاح المحاذاة */
+.workshops-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.workshops-container {
+    display: flex;
+    overflow: hidden; /* إخفاء أي محتوى زائد */
+    scroll-behavior: smooth;
+    width: 80%;
+    gap: 20px;
+}
+
+.workshop-card {
+    flex: 0 0 300px; /* حجم الكارد ثابت */
+    background: linear-gradient(135deg, #ffffff, #e6fff2);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.arrow {
+    background-color: #008a9e;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.arrow:hover {
+    background-color: #005f6b;
+}
+
+.left-arrow {
+    position: absolute;
+    left: 5%;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 5%;
+}
+
+.workshop-card button {
+    background-color: #008a9e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.workshop-card button:hover {
+    background-color: #005f6b;
+}
+
+
+
+
+/* التذييل */
+
+.main-footer {
+    background-color: #303030;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main-footer h2 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #84cd81;
+}
+
+.icon-linkedin {
+    background: url('linkedin-icon.png') no-repeat center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.icon-x {
+    background: url('x-icon.png') no-repeat center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: cover;
+}
+
+.icon-email {
+    background: url('email-icon.png') no-repeat center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: cover;
+}
+/* Join Us Section */
+/* Join Us Section Improved Layout */
+.join-us-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #008a9e;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.join-us-section h2 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.join-us-section p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.join-us-link {
+    background-color: #84cd81;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.join-us-link:hover {
+    background-color: #5da462;
+}
+
+/* Optional: Align elements in a horizontal row */
+@media (min-width: 600px) {
+    .join-us-section {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    .join-us-section h2,
+    .join-us-section p,
+    .join-us-link {
+        margin: 0 10px;
+    }
+}
+
