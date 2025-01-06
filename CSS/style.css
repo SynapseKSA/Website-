@@ -1602,7 +1602,7 @@ transform: scale(1.05);
 
 .counter-wrapper {
     font-size: 62.5%;
-    background: url(../img/colorfulBackground.png);
+    background: url(../Assets/colorfulBackground.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
