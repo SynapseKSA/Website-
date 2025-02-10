@@ -12,9 +12,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="/Assets/Logo.jpg" />
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
   </head>
   <body>
     <header>
@@ -326,6 +330,200 @@
         </div>
       </div>
     </section>
+
+    <div class="container">
+      <div class="card" data-type="finance">
+          <span class="tag">مالية</span>
+          <h2 class="title-ar">التحليل المالي</h2>
+          <h3 class="title-en">Financial Analysis</h3>
+          <p class="description">دورة شاملة في التحليل المالي والاستثمار. تعلم كيفية تحليل القوائم المالية واتخاذ القرارات الاستثمارية السليمة</p>
+          <button class="register-btn">التسجيل الآن</button>
+      </div>
+
+      <div class="card" data-type="management">
+          <span class="tag">إدارة</span>
+          <h2 class="title-ar">إدارة المشاريع</h2>
+          <h3 class="title-en">Project Management</h3>
+          <p class="description">دورة متقدمة في إدارة المشاريع الاحترافية. تعلم أحدث منهجيات الإدارة وأدوات التخطيط والتنفيذ</p>
+          <button class="register-btn">التسجيل الآن</button>
+      </div>
+
+      <div class="card" data-type="marketing">
+          <span class="tag">تسويق</span>
+          <h2 class="title-ar">التسويق الرقمي</h2>
+          <h3 class="title-en">Digital Marketing</h3>
+          <p class="description">دورة احترافية في التسويق الرقمي. اكتشف أحدث استراتيجيات التسويق وأدوات التحليل الرقمية</p>
+          <button class="register-btn">التسجيل الآن</button>
+      </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal">
+      <div class="modal-content">
+          <button class="modal-close">×</button>
+          <div class="modal-body">
+              <!-- Content will be dynamically inserted here -->
+          </div>
+      </div>
+  </div>
+
+  <script>
+      // Register button click
+      document.querySelectorAll('.register-btn').forEach(btn => {
+          btn.addEventListener('click', function(e) {
+              const modal = document.querySelector('.modal');
+              const modalBody = modal.querySelector('.modal-body');
+              const card = this.closest('.card');
+              
+              const title = card.querySelector('.title-ar').textContent;
+              const type = card.querySelector('.tag').textContent;
+              
+              modalBody.innerHTML = `
+                  <h3 style="color: var(--primary-color); margin-bottom: 1rem;">${type}</h3>
+                  <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">${title}</h2>
+                  
+                  <div class="modal-details">
+                      <div class="detail-item">
+                          <div class="detail-label">مدة الدورة</div>
+                          <div class="detail-value">3 أشهر</div>
+                      </div>
+                      <div class="detail-item">
+                          <div class="detail-label">الرسوم</div>
+                          <div class="detail-value">1500 ريال</div>
+                      </div>
+                      <div class="detail-item">
+                          <div class="detail-label">المقاعد المتاحة</div>
+                          <div class="detail-value">20 مقعد</div>
+                      </div>
+                      <div class="detail-item">
+                          <div class="detail-label">نوع الحضور</div>
+                          <div class="detail-value">حضوري</div>
+                      </div>
+                  </div>
+
+                  <div class="course-schedule">
+                      <h4 class="schedule-title">مواعيد الدورة</h4>
+                      <ul class="schedule-list">
+                          <li class="schedule-item">
+                              <span>الأحد</span>
+                              <span>4:00 - 8:00 مساءً</span>
+                          </li>
+                          <li class="schedule-item">
+                              <span>الثلاثاء</span>
+                              <span>4:00 - 8:00 مساءً</span>
+                          </li>
+                          <li class="schedule-item">
+                              <span>الخميس</span>
+                              <span>4:00 - 8:00 مساءً</span>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <div class="instructor-info">
+                      <img src="https://picsum.photos/200" alt="المدرب" class="instructor-image">
+                      <div class="instructor-details">
+                          <h4>نوف الجدعاني/h4>
+                          <p>خبير في مجال ${type} مع خبرة تزيد عن 00 عاماً في التدريب والاستشارات</p>
+                      </div>
+                  </div>
+
+                  <button class="register-btn" style="margin-top: 2rem;">تأكيد التسجيل</button>
+              `;
+              
+              modal.classList.add('show');
+          });
+      });
+
+      // Close modal
+      document.querySelector('.modal-close').addEventListener('click', () => {
+          document.querySelector('.modal').classList.remove('show');
+      });
+
+      // Close modal when clicking outside
+      document.querySelector('.modal').addEventListener('click', (e) => {
+          if (e.target === document.querySelector('.modal')) {
+              document.querySelector('.modal').classList.remove('show');
+          }
+      });
+  </script>
+
+ <footer class="footer">
+  <div class="footer-particles" id="particles"></div>
+  <div class="footer-container">
+      <div class="footer-grid">
+          <div class="footer-section">
+              <h2 class="footer-title">تواصل معنا</h2>
+              <div class="contact-card">
+                  <div class="contact-content">
+                      <div class="contact-icon">
+                          <i class="fas fa-phone"></i>
+                      </div>
+                      <div class="contact-info">
+                          <h3>اتصل بنا</h3>
+                          <p>+966 55555555</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="contact-card">
+                  <div class="contact-content">
+                      <div class="contact-icon">
+                          <i class="fas fa-map-marker-alt"></i>
+                      </div>
+                      <div class="contact-info">
+                          <h3>العنوان</h3>
+                          <p>جدة,المملكة العربية السعودية</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="social-grid">
+                  <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="social-link">
+                      <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" class="social-link">
+                      <i class="fab fa-instagram"></i>
+                  </a>
+              </div>
+          </div>
+
+          <div class="footer-section">
+              <h2 class="footer-title">روابط سريعة</h2>
+              <div class="quick-links">
+                  <div class="quick-link">
+                      <a href="#">الرئيسية</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">من نحن</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">خدماتنا</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">المشاريع</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">الأخبار</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">اتصل بنا</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>جميع الحقوق محفوظة © 2025 Synapse - المملكة العربية السعودية</p>
+  </div>
+</footer>
+
+
+    
+    
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
