@@ -1,131 +1,550 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جمعية سنابس</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="main-header">
-        <div class="header-container">
-            <img src="Synapse_logoo-0٧.png" alt="شعار جمعية سنابس" class="logo-circle">
-            <div class="header-text">
-                <h1>جمعية سنابس</h1>
-                <p>لبناء مجتمع تقني مبتكر، حالم، وواعد</p>
-            </div>
-        </div>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سنابس</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/Assets/Logo.jpg" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="#" class="logoINnav">
+          <div class="logo-inner">
+            <img src="Assets/Synapse_logoo-١٠.png" alt="شعار الموقع" />
+          </div>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li>
+              <a href="#" class="active"
+                ><i class="fas fa-home"></i> الرئيسية</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-info-circle"></i> من نحن</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-hand-holding-heart"></i> خدماتنا</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-lightbulb"></i> المبادرات</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chalkboard-teacher"></i> ورش العمل</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </header>
 
-    <nav class="main-nav">
-        <a href="#">الصفحة الرئيسية</a>
-        <a href="#">خدماتنا</a>
-        <a href="#">ورش العمل</a>
-        <a href="#">تواصل معنا</a>
-    </nav>
+    <script>
+      const header = document.querySelector("header");
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector("nav");
 
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 30) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
 
+      mobileMenuBtn.addEventListener("click", () => {
+        nav.classList.toggle("show");
+        const icon = mobileMenuBtn.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
+      });
 
-    <section class="services-programs">
-        <h2>البرامج والخدمات</h2>
-        <div class="services-container">
-            <div class="service">
-                <h3>خدمات الأفراد</h3>
-                <ul>
-                    <li>تقديم ورش عمل ودورات تدريبية</li>
-                    <li>توفير محتوى تعليمي عبر الإنترنت</li>
-                    <li>تنظيم فعاليات وندوات تعريفية حول الذكاء الاصطناعي</li>
-                </ul>
+      document.addEventListener("click", (e) => {
+        if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          nav.classList.remove("show");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("show");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+    </script>
+      <div class="hero-section">
+          <div class="hero-content">
+            <div class="hero-text-container" data-aos="fade-up">
+              <h1 class="hero-title">
+                <span class="gradient-text">سنابس</span>
+                <div class="subtitle-wrapper">
+                  <span class="subtitle">نبتكر لنرتقي بالمستقبل</span>
+                </div>
+              </h1>
+              <p class="hero-description">
+                نجمع بين العلم والابتكار لنصنع تغييراً إيجابياً في عالم التقنية
+                والذكاء الاصطناعي، ونقود التحول الرقمي نحو آفاق جديدة
+              </p>
+              <div class="cta-container">
+                <a href="#services" class="cta-button primary">
+                  <span>اكتشف خدماتنا</span>
+                  <i class="fas fa-arrow-left"></i>
+                </a>
+                <a href="#about" class="cta-button secondary">
+                  <span>تعرف علينا</span>
+                  <i class="fas fa-users"></i>
+                </a>
+              </div>
             </div>
-            <div class="service">
-                <h3>خدمات الشركات</h3>
-                <ul>
-                    <li>تقديم خدمات استشارية في مجال الذكاء الاصطناعي</li>
-                    <li>تصميم وتقديم ورش عمل مخصصة للعاملين في الشركات</li>
-                    <li>تطوير حلول تقنية تعتمد على الذكاء الاصطناعي حسب احتياجات الشركات</li>
-                </ul>
+            <div class="hero-visual" data-aos="fade-left">
+              <div class="tech-sphere">
+                <div class="logo-container">
+                  <img src="Assets/Logo.jpg" alt="سنابس" class="logo" />
+                  <div class="logo-shadow"></div>
+                </div>
+                <div class="floating-elements">
+                  <div class="float-item ai"><i class="fas fa-brain"></i></div>
+                  <div class="float-item data"><i class="fas fa-database"></i></div>
+                  <div class="float-item innovation">
+                    <i class="fas fa-lightbulb"></i>
+                  </div>
+                  <div class="float-item tech">
+                    <i class="fas fa-microchip"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="service">
-                <h3>الأبحاث</h3>
-                <ul>
-                    <li>تبني كتابة ونشر الأبحاث في مجال الذكاء الاصطناعي</li>
-                    <li>دعم مشاريع البحث والتطوير المشتركة مع الجامعات والمؤسسات الأكاديمية</li>
-                    <li>تنظيم مؤتمرات علمية وورش عمل لعرض نتائج الأبحاث الجديدة</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="workshops-section">
-        <h2>ورش العمل</h2>
-        <div class="workshops-slider">
-            <button class="arrow left-arrow">‹</button>
-            <div class="workshops-container">
-                <div class="workshop-card">
-                    <h3>دورة 1</h3>
-                    <p>تعلم أساسيات الذكاء الاصطناعي</p>
-                    <button>الانضمام</button>
-                </div>
-                <div class="workshop-card">
-                    <h3>دورة 2</h3>
-                    <p>تطوير تطبيقات باستخدام تعلم الآلة</p>
-                    <button>الانضمام</button>
-                </div>
-                <div class="workshop-card">
-                    <h3>دورة 3</h3>
-                    <p>تحليل البيانات الضخمة باستخدام الذكاء الاصطناعي</p>
-                    <button>الانضمام</button>
-                </div>
-                <div class="workshop-card">
-                    <h3>دورة 4</h3>
-                    <p>تصميم الأنظمة الذكية</p>
-                    <button>الانضمام</button>
-                </div>
-                <div class="workshop-card">
-                    <h3>دورة 5</h3>
-                    <p>تطوير تطبيقات الهواتف باستخدام الذكاء الاصطناعي</p>
-                    <button>الانضمام</button>
-                </div>
-                <div class="workshop-card">
-                    <h3>دورة 6</h3>
-                    <p>استخدام الذكاء الاصطناعي في الأتمتة</p>
-                    <button>الانضمام</button>
-                </div>
-            </div>
-            <button class="arrow right-arrow">›</button>
-        </div>
-    </section>
-    
-    
-    
-    
-
-    <footer class="main-footer">
-      <h2>تواصلوا معنا</h2>
-      <div class="contact-container">
-          <div class="contact-item">
-              <a href="https://linkedin.com/in/SynapseKsa" target="_blank">
-                  <span class="icon-linkedin"></span> SynapseKsa
-              </a>
           </div>
-          <div class="contact-item">
-              <a href="https://x.com/SynapseKsa" target="_blank">
-                  <span class="icon-x"></span> SynapseKsa
-              </a>
+          <div class="hero-background">
+            <div class="gradient-orb"></div>
+            <div class="pattern-grid"></div>
           </div>
-          <div class="contact-item">
-              <a href="mailto:SynapseAdmin@synapseksa.com">
-                  <span class="icon-email"></span> SynapseAdmin@synapseksa.com
-              </a>
-          </div>
-          <div class="join-us-section">
-            <h2>أنضم الينا</h2>
-            <p>Be part of our innovative tech community</p>
-            <a href="https://forms.office.com/r/00SbeG2xbU" target="_blank" class="join-us-link">انضم الان </a>
         </div>
-        
+  <div class="bg-pattern"></div>
+
+    
+  <section class="about-section">
+    <div class="about-grid">
+      <!-- Video Side -->
+      <!-- Logo Side -->
+      <div class="logo-side">
+        <div class="logo-About">
+          <img src="Assets/Logo.jpg" alt="شعار سينابس" class="logo-image" />
+          <div class="logo-overlay"></div>
+          <div class="logo-pattern"></div>
+          <!-- Decorative Elements -->
+
+          <div class="corner-shape"></div>
+        </div>
       </div>
-  </footer>
-  <script src="script.js"></script> 
-</body>
+
+      <!-- Content Side -->
+
+      <div class="content-side" data-aos="fade-right">
+        <div class="about-title">
+          <span class="title-pill">
+            <span class="title-icon"><i class="fas fa-info-circle"></i></span>
+            من نحن
+          </span>
+        </div>
+        <br />
+        <div class="about-content">
+          <p class="main-text reveal-text">
+            على مر العصور، استطاع العقل البشري أن يرتقي بإبداعه ليصل إلى آفاق
+            جديدة. نحن نسعى لاستكشاف مصدر هذا الإبداع الخلّاب ونرى فيه شرارة
+            تجمع بين العلم والابتكار.
+          </p>
+          <p class="highlight-text reveal-text">
+            في سينابس، هدفنا هو تحويل الأفكار الملهمة إلى إنجازات تعزز حياة
+            الأفراد والمجتمعات.
+          </p>
+        </div>
+        <!-- Added Features -->
+        <div class="features-strip">
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-brain"></i>
+            <span>الابتكار</span>
+          </div>
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-lightbulb"></i>
+            <span>الإبداع</span>
+          </div>
+          <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-rocket"></i>
+            <span>التطور</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="divider-container">
+      <div class="gradient-banner"></div>
+      <div class="particles"></div>
+      <div class="wave"></div>
+      <div class="counter-wrapper">
+          <div class="counter">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fbfcfc" class="icons">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+              </svg>
+              <h1 class="count" data-target="19">0</h1>
+              <p>برنامج ونشاط</p>
+          </div>
+          <div class="counter">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fbfcfc" class="icons">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>
+              </svg>
+              <h1 class="count" data-target="90">0</h1>
+              <p>متطوع</p>
+          </div>
+          <div class="counter">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fbfcfc" class="icons">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+              </svg>
+              <h1 class="count" data-target="260">0</h1>
+              <p>ساعة تطوعيه</p>
+          </div>
+          <div class="counter">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fbfcfc" class="icons">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z"/>
+              </svg>
+              <h1 class="count" data-target="1152">0</h1>
+              <p>مستفيد</p>
+          </div>
+          <div class="counter">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fbfcfc" class="icons">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"/>
+              </svg>
+              <h1 class="count" data-target="10">0</h1>
+              <p>اعضاء بالجمعية</p>
+          </div>
+      </div>
+  </div>
+
+  <section class="services-container">
+      <div class="services-wrapper">
+          <div class="service-card">
+              <div class="service-icon">
+                  <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3 class="service-title">تقديم دورات شاملة</h3>
+              <p class="service-description">
+                  تطوير دورات وورش عمل متخصصة في
+                  مجال الذكاء الاصطناعي تناسب مختلف
+                  المستويات والمهارات
+              </p>
+          </div>
+
+          <div class="service-card">
+              <div class="service-icon">
+                  <i class="fas fa-robot"></i>
+              </div>
+              <h3 class="service-title">حلول ذكاء اصطناعي</h3>
+              <p class="service-description">
+                  تطوير حلول مبتكرة باستخدام أحدث تقنيات
+                  الذكاء الاصطناعي وتطبيقاته
+              </p>
+          </div>
+
+          <div class="service-card">
+              <div class="service-icon">
+                  <i class="fas fa-brain"></i>
+              </div>
+              <h3 class="service-title">استشارات تقنية</h3>
+              <p class="service-description">
+                  استشارات متخصصة في مجال الذكاء الاصطناعي
+                  وتطبيقاته المختلفة
+              </p>
+          </div>
+      </div>
+  </section>
+
+  <script>
+      // Create floating particles
+      const particles = document.querySelector('.particles');
+      for (let i = 0; i < 50; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+          particle.style.width = Math.random() * 10 + 'px';
+          particle.style.height = particle.style.width;
+          particle.style.left = Math.random() * 100 + '%';
+          particle.style.top = Math.random() * 100 + '%';
+          particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+          particle.style.animationDelay = Math.random() * 2 + 's';
+          particles.appendChild(particle);
+      }
+
+      // Counter animation
+      const counters = document.querySelectorAll('.count');
+      const speed = 200;
+
+      const animateCounter = (counter) => {
+          const target = +counter.getAttribute('data-target');
+          let count = 0;
+          const increment = target / speed;
+
+          const updateCount = () => {
+              if (count < target) {
+                  count += increment;
+                  counter.innerText = Math.ceil(count);
+                  setTimeout(updateCount, 1);
+              } else {
+                  counter.innerText = target;
+              }
+          };
+
+          updateCount();
+      };
+
+      // Intersection Observer for counter animation
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  animateCounter(entry.target);
+                  observer.unobserve(entry.target);
+              }
+          });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => observer.observe(counter));
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+      <div class="card" data-type="finance">
+          <span class="tag">مالية</span>
+          <h2 class="title-ar">التحليل المالي</h2>
+          <h3 class="title-en">Financial Analysis</h3>
+          <p class="description">دورة شاملة في التحليل المالي والاستثمار. تعلم كيفية تحليل القوائم المالية واتخاذ القرارات الاستثمارية السليمة</p>
+          <button class="register-btn">التسجيل الآن</button>
+      </div>
+
+      <div class="card" data-type="management">
+          <span class="tag">إدارة</span>
+          <h2 class="title-ar">إدارة المشاريع</h2>
+          <h3 class="title-en">Project Management</h3>
+          <p class="description">دورة متقدمة في إدارة المشاريع الاحترافية. تعلم أحدث منهجيات الإدارة وأدوات التخطيط والتنفيذ</p>
+          <button class="register-btn">التسجيل الآن</button>
+      </div>
+
+      <div class="card" data-type="marketing">
+          <span class="tag">تسويق</span>
+          <h2 class="title-ar">التسويق الرقمي</h2>
+          <h3 class="title-en">Digital Marketing</h3>
+          <p class="description">دورة احترافية في التسويق الرقمي. اكتشف أحدث استراتيجيات التسويق وأدوات التحليل الرقمية</p>
+          <button class="register-btn">التسجيل الآن</button>
+      </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal">
+      <div class="modal-content">
+          <button class="modal-close">×</button>
+          <div class="modal-body">
+              <!-- Content will be dynamically inserted here -->
+          </div>
+      </div>
+  </div>
+
+  <script>
+      // Register button click
+      document.querySelectorAll('.register-btn').forEach(btn => {
+          btn.addEventListener('click', function(e) {
+              const modal = document.querySelector('.modal');
+              const modalBody = modal.querySelector('.modal-body');
+              const card = this.closest('.card');
+              
+              const title = card.querySelector('.title-ar').textContent;
+              const type = card.querySelector('.tag').textContent;
+              
+              modalBody.innerHTML = `
+                  <h3 style="color: var(--primary-color); margin-bottom: 1rem;">${type}</h3>
+                  <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">${title}</h2>
+                  
+                  <div class="modal-details">
+                      <div class="detail-item">
+                          <div class="detail-label">مدة الدورة</div>
+                          <div class="detail-value">3 أشهر</div>
+                      </div>
+                      <div class="detail-item">
+                          <div class="detail-label">الرسوم</div>
+                          <div class="detail-value">لايوجد</div>
+                      </div>
+                      <div class="detail-item">
+                          <div class="detail-label">المقاعد المتاحة</div>
+                          <div class="detail-value">20 مقعد</div>
+                      </div>
+                      <div class="detail-item">
+                          <div class="detail-label">نوع الحضور</div>
+                          <div class="detail-value">حضوري</div>
+                      </div>
+                  </div>
+
+                  <div class="course-schedule">
+                      <h4 class="schedule-title">مواعيد الدورة</h4>
+                      <ul class="schedule-list">
+                          <li class="schedule-item">
+                              <span>الأحد</span>
+                              <span>4:00 - 8:00 مساءً</span>
+                          </li>
+                          <li class="schedule-item">
+                              <span>الثلاثاء</span>
+                              <span>4:00 - 8:00 مساءً</span>
+                          </li>
+                          <li class="schedule-item">
+                              <span>الخميس</span>
+                              <span>4:00 - 8:00 مساءً</span>
+                          </li>
+                      </ul>
+                  </div>
+
+                  <div class="instructor-info">
+                      <img src="https://picsum.photos/200" alt="المدرب" class="instructor-image">
+                      <div class="instructor-details">
+                          <h4>نوف الجدعاني<h4>
+                          <p>خبير في مجال ${type} مع خبرة تزيد عن 00 عاماً في التدريب والاستشارات</p>
+                      </div>
+                  </div>
+
+                  <button class="register-btn" style="margin-top: 2rem;">التسجيل</button>
+              `;
+              
+              modal.classList.add('show');
+          });
+      });
+
+      // Close modal
+      document.querySelector('.modal-close').addEventListener('click', () => {
+          document.querySelector('.modal').classList.remove('show');
+      });
+
+      // Close modal when clicking outside
+      document.querySelector('.modal').addEventListener('click', (e) => {
+          if (e.target === document.querySelector('.modal')) {
+              document.querySelector('.modal').classList.remove('show');
+          }
+      });
+  </script>
+
+ <footer class="footer">
+  <div class="footer-particles" id="particles"></div>
+  <div class="footer-container">
+      <div class="footer-grid">
+          <div class="footer-section">
+              <h2 class="footer-title">تواصل معنا</h2>
+              <div class="contact-card">
+                  <div class="contact-content">
+                      <div class="contact-icon">
+                          <i class="fas fa-phone"></i>
+                      </div>
+                      <div class="contact-info">
+                          <h3>اتصل بنا</h3>
+                          <p>+966 55555555</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="contact-card">
+                  <div class="contact-content">
+                      <div class="contact-icon">
+                          <i class="fas fa-map-marker-alt"></i>
+                      </div>
+                      <div class="contact-info">
+                          <h3>العنوان</h3>
+                          <p>جدة,المملكة العربية السعودية</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="social-grid">
+                  <a href="#" class="social-link">
+                      <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="social-link">
+                      <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="social-link">
+                      <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="#" class="social-link">
+                      <i class="fab fa-instagram"></i>
+                  </a>
+              </div>
+          </div>
+
+          <div class="footer-section">
+              <h2 class="footer-title">روابط سريعة</h2>
+              <div class="quick-links">
+                  <div class="quick-link">
+                      <a href="#">الرئيسية</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">من نحن</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">خدماتنا</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">المشاريع</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">الأخبار</a>
+                  </div>
+                  <div class="quick-link">
+                      <a href="#">اتصل بنا</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>جميع الحقوق محفوظة © 2025 Synapse - المملكة العربية السعودية</p>
+  </div>
+</footer>
+
+
+    
+    
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+    </script>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
