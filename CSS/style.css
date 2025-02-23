@@ -1,37 +1,89 @@
 :root {
-  --primary-color: #01acd3;
-  --secondary-color: #84cd81;
+  /* Main Brand Colors */
+  --primary-blue: #01acd3;      /* اللون الأزرق من اللوقو */
+  --secondary-sage: #7a8f78;    /* اللون الأخضر المائل للرمادي من اللوقو */
+  --accent-teal: #3b9b9f;       /* اللون المتوسط من اللوقو */
+  --accent-brown: #b17f5c;      /* اللون البني من اللوقو */
+
+  /* Text Colors */
   --text-primary: #303030;
   --text-secondary: #4a5568;
-  --bg-primary: #f0f2f5;
+  --text-light: #f8fafc;
+  --text-muted: #64748b;
+
+  /* Background Colors */
+  --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --border-color: rgba(255, 255, 255, 0.8);
-  --shadow-color: rgba(0, 0, 0, 0.05);
-  --modal-bg: rgba(0, 0, 0, 0.5);
-  
-  /* الألوان الجديدة */
-  
-  --color-lime: #d4e14f;
-  --color-green: #84cd81;
-  --color-dark: #303030;
-  --color-turquoise: #01acd3;
-  --color-blue: #008aff;
-  
-  /* التدرجات اللونية */
-  --gradient-primary: linear-gradient(
-      135deg,
-      #d4e14f,
-      #84cd81,
-      #01acd3,
-      #008aff
-  );
-  --gradient-hover: linear-gradient(
-      135deg,
-      #84cd81,
-      #84cd81,
-      #d4e14f
-  );
+  --bg-tertiary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.9);
+
+  /* Gradient Combinations */
+  --gradient-primary: linear-gradient(135deg, #01acd3, #3b9b9f, #7a8f78, #b17f5c);
+  --gradient-secondary: linear-gradient(135deg, #b17f5c, #7a8f78, #3b9b9f, #01acd3);
+  --gradient-hover: linear-gradient(135deg, #3b9b9f, #01acd3, #7a8f78);
+  --gradient-card: linear-gradient(120deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+
+  /* Dark Mode Colors */
+  --dark-bg-primary: #1a1a1a;
+  --dark-bg-secondary: #2d2d2d;
+  --dark-bg-tertiary: #333333;
+  --dark-card: rgba(255, 255, 255, 0.1);
+
+  /* Border Colors */
+  --border-light: rgba(255, 255, 255, 0.8);
+  --border-medium: rgba(1, 172, 211, 0.2);
+  --border-dark: rgba(0, 0, 0, 0.1);
+
+  /* Shadow Effects */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 30px rgba(1, 172, 211, 0.1);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* Glassmorphism Effects */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(1, 172, 211, 0.1);
+  --blur-effect: blur(10px);
+
+  /* Spacing System */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Transition Speeds */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+
+  /* Z-index Layers */
+  --z-negative: -1;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+
+  /* Animation Properties */
+  --animation-slow: 15s;
+  --animation-normal: 10s;
+  --animation-fast: 5s;
 }
 
   * {
@@ -1413,9 +1465,9 @@
 
   :root {
     --color-primary: #01acd3;
-    --color-secondary: #84cd81;
-    --color-accent: #e87d34;
-    --color-gradient: linear-gradient(135deg, #01acd3, #84cd81);
+    --color-secondary: #01acd3;
+    --color-accent: #3b9b9f;
+    --color-gradient: linear-gradient(135deg, #b17f5c, #01acd3);
 }
 
 * {
@@ -1671,17 +1723,12 @@
 }
 
 :root {
-  --primary-color: #52ccff;
-  --secondary-color: #95cc6f;
-  --accent-color: #ff9152;
-  --text-primary: #1a2b3c;
-  --text-secondary: #4a5568;
-  --bg-primary: #f0f2f5;
-  --bg-secondary: #ffffff;
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --border-color: rgba(255, 255, 255, 0.8);
-  --shadow-color: rgba(0, 0, 0, 0.05);
-  --modal-bg: rgba(0, 0, 0, 0.5);
+
+  --primary-color: #01acd3;
+  --secondary-color: #7a8f78;
+  --accent-color: #3b9b9f;
+  --text-primary: #b17f5c;
+ --text-secondary: #191919;
 }
 
 
