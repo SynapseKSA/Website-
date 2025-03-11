@@ -230,11 +230,12 @@ nav {
   width: 0;
   height: 2px;
   background: linear-gradient(135deg,
-      #e87d34,
-      #d4e14f,
-      #84cd81,
-      #01acd3,
-      #008aff);
+  #01acd3,
+  #7a8f78,
+  #3b9b9f,
+  #01acd3,
+  #b17f5c
+);
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 2px;
 }
@@ -795,24 +796,6 @@ nav {
   .hero-visual {
     display: none;
   }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Cairo', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-  min-height: 200vh;
-  color: var(--color-dark);
-  overflow-x: hidden;
 }
 
 
