@@ -22,10 +22,26 @@
   --bg-card: rgba(255, 255, 255, 0.9);
 
   /* Gradient Combinations */
-  --gradient-primary: linear-gradient(135deg, #01acd3, #3b9b9f, #7a8f78, #b17f5c);
-  --gradient-secondary: linear-gradient(135deg, #b17f5c, #7a8f78, #3b9b9f, #01acd3);
+  --gradient-primary: linear-gradient(
+    135deg,
+    #01acd3,
+    #3b9b9f,
+    #7a8f78,
+    #b17f5c
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    #b17f5c,
+    #7a8f78,
+    #3b9b9f,
+    #01acd3
+  );
   --gradient-hover: linear-gradient(135deg, #3b9b9f, #01acd3, #7a8f78);
-  --gradient-card: linear-gradient(120deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+  --gradient-card: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.4)
+  );
 
   /* Dark Mode Colors */
   --dark-bg-primary: #1a1a1a;
@@ -146,12 +162,14 @@ header.scrolled {
   justify-content: center;
   border-radius: 12px;
   overflow: hidden;
-  background: linear-gradient(135deg,
-      #e87d34,
-      #d4e14f,
-      #84cd81,
-      #01acd3,
-      #008aff);
+  background: linear-gradient(
+    135deg,
+    #e87d34,
+    #d4e14f,
+    #84cd81,
+    #01acd3,
+    #008aff
+  );
   background-size: 300% 300%;
   animation: gradientAnimation 15s ease infinite;
   padding: 2px;
@@ -229,13 +247,14 @@ nav {
   right: 1.2rem;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg,
-  #01acd3,
-  #7a8f78,
-  #3b9b9f,
-  #01acd3,
-  #b17f5c
-);
+  background: linear-gradient(
+    135deg,
+    #01acd3,
+    #7a8f78,
+    #3b9b9f,
+    #01acd3,
+    #b17f5c
+  );
   transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 2px;
 }
@@ -391,6 +410,7 @@ nav {
 }
 
 .gradient-text {
+  padding-bottom: 2rem;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
@@ -591,7 +611,6 @@ nav {
 }
 
 @keyframes logoPulse {
-
   0%,
   100% {
     transform: scale(1);
@@ -603,7 +622,6 @@ nav {
 }
 
 @keyframes shadowPulse {
-
   0%,
   100% {
     transform: translateX(-50%) scale(1);
@@ -617,7 +635,6 @@ nav {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0) translateZ(0);
@@ -629,7 +646,6 @@ nav {
 }
 
 @keyframes titleFloat {
-
   0%,
   100% {
     transform: translateY(0);
@@ -656,9 +672,11 @@ nav {
   height: 800px;
   top: -200px;
   right: -200px;
-  background: radial-gradient(circle,
-      rgba(232, 125, 52, 0.1) 0%,
-      rgba(232, 125, 52, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(232, 125, 52, 0.1) 0%,
+    rgba(232, 125, 52, 0) 70%
+  );
   border-radius: 50%;
   animation: orbFloat 8s infinite ease-in-out;
 }
@@ -667,15 +685,16 @@ nav {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(232, 125, 52, 0.05) 1px,
-      transparent 1px),
+  background-image: linear-gradient(
+      rgba(232, 125, 52, 0.05) 1px,
+      transparent 1px
+    ),
     linear-gradient(90deg, rgba(232, 125, 52, 0.05) 1px, transparent 1px);
   background-size: 30px 30px;
   opacity: 0.5;
 }
 
 @keyframes orbFloat {
-
   0%,
   100% {
     transform: translate(0, 0);
@@ -798,8 +817,6 @@ nav {
   }
 }
 
-
-
 .divider-container {
   position: relative;
   width: 100%;
@@ -823,6 +840,9 @@ nav {
 }
 
 /* Counter Styles */
+.title-container {
+  padding-top: 3rem;
+}
 .counter-wrapper {
   position: relative;
   display: flex;
@@ -922,13 +942,17 @@ nav {
 }
 
 .service-card::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, transparent 30%, rgba(1, 172, 211, 0.1) 70%);
+  background: radial-gradient(
+    circle at center,
+    transparent 30%,
+    rgba(1, 172, 211, 0.1) 70%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -1002,7 +1026,7 @@ nav {
 }
 
 .workshop-title {
-  font-size: 3.0rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--text-primary);
   position: relative;
@@ -1021,11 +1045,9 @@ nav {
   border-radius: var(--radius-full);
 }
 
-
-
 .curveUpColor,
 .curveDownColor {
-  fill:#f8f9fa;
+  fill: #f8f9fa;
   stroke: #f8f9fa;
   position: absolute;
   left: 0;
@@ -1045,8 +1067,8 @@ nav {
 }
 
 .curveGrey {
-  fill: #ECF0F1;
-  stroke: #ECF0F1;
+  fill: #ecf0f1;
+  stroke: #ecf0f1;
 }
 
 @media (max-width: 768px) {
@@ -1090,7 +1112,6 @@ nav {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
@@ -1248,17 +1269,18 @@ nav {
 
 /* Add viewport meta tag if not already present */
 
-
-
-
 /* css تبع ال about us */
+#about {
+  padding-bottom: 5rem;
+}
 .about-section {
   padding: 6rem 2rem;
   /* background: linear-gradient(to bottom, #fff, #f8f9fa); */
   background-image: url(../Assets/synapse_elements-0٢.png);
+  filter: brightness(90%);
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  min-height: 60rem;
   display: flex;
   align-items: center;
   position: relative;
@@ -1272,9 +1294,11 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 0% 0%,
-      rgba(1, 172, 211, 0.05) 0%,
-      transparent 50%);
+  background: radial-gradient(
+    circle at 0% 0%,
+    rgba(1, 172, 211, 0.05) 0%,
+    transparent 50%
+  );
   pointer-events: none;
 }
 
@@ -1314,7 +1338,7 @@ nav {
   z-index: 2;
   border-radius: 100%;
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05),
-  -20px -20px 60px rgba(255, 255, 255, 0.8);
+    -20px -20px 60px rgba(255, 255, 255, 0.8);
 }
 
 .logo-container:hover {
@@ -1422,18 +1446,19 @@ nav {
 }
 
 .main-text {
-  color: #333;
+  color: #ffffff;
   font-size: 1.5rem;
+  font-weight: 800;
   line-height: 1.8;
   font-weight: 500;
   animation-delay: 0.3s;
 }
 
 .highlight-text {
-  color: #333;
+  color: #ffffff;
   font-size: 1.5rem;
   line-height: 1.8;
-  font-weight: 600;
+  font-weight: 800;
   animation-delay: 0.6s;
   position: relative;
   padding-right: 1rem;
@@ -1453,7 +1478,7 @@ nav {
 .features-strip {
   display: flex;
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 .feature-item {
@@ -1483,7 +1508,6 @@ nav {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
@@ -1577,8 +1601,6 @@ nav {
   }
 }
 
-
-
 :root {
   --color-primary: #01acd3;
   --color-secondary: #01acd3;
@@ -1590,7 +1612,7 @@ nav {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Tajawal', sans-serif;
+  font-family: "Tajawal", sans-serif;
 }
 
 .footer {
@@ -1659,7 +1681,7 @@ nav {
 }
 
 .footer-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -1741,7 +1763,7 @@ nav {
 }
 
 .social-link::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1802,16 +1824,18 @@ nav {
 }
 
 .footer-bottom::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
 }
 
 @media (max-width: 768px) {
@@ -1829,25 +1853,20 @@ nav {
   }
 }
 
-
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
 
 :root {
-
   --primary-color: #01acd3;
   --secondary-color: #7a8f78;
   --accent-color: #3b9b9f;
   --text-primary: #b17f5c;
   --text-secondary: #191919;
 }
-
 
 .container {
   max-width: 1400px;
@@ -1923,9 +1942,11 @@ nav {
 }
 
 .register-btn {
-  background: linear-gradient(135deg,
-      var(--primary-color) 0%,
-      var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   color: white;
   padding: 1.2rem 2rem;
   border-radius: 16px;
@@ -2098,10 +2119,9 @@ nav {
   line-height: 1.5;
 }
 
-.image-bg img{
- 
+.image-bg img {
   height: 100%;
-  width: 100%
+  width: 100%;
 }
 
 /* Responsive Design */
@@ -2203,8 +2223,6 @@ nav {
     padding: 1.2rem;
     border-radius: 16px;
   }
-
-
 
   .schedule-item {
     flex-direction: column;
