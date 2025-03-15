@@ -726,10 +726,10 @@ box-shadow: 0 5px 15px rgba(34, 128, 187, 0.3);
 .profile-card {
     background: rgba(255, 255, 255, 0.9);
     padding: 2.5rem;
+    position: relative;
+    overflow: hidden; 
     border-radius: 20px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
     box-shadow: 
         0 15px 35px rgba(0, 0, 0, 0.05),
         0 1px 5px rgba(0, 0, 0, 0.03);
@@ -740,39 +740,38 @@ box-shadow: 0 5px 15px rgba(34, 128, 187, 0.3);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.8);
 }
-
 .linkedin-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background: var(--linkedin-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    z-index: 2;
-    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.2);
-    opacity: 0;
-    transform: translateY(-10px);
+  position: absolute;
+  top: 20px;
+  left: 20px;  /* تغيير من right إلى left */
+  width: 40px;
+  height: 40px;
+  background: var(--linkedin-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 119, 181, 0.2);
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 .profile-card:hover .linkedin-btn {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .linkedin-btn:hover {
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 119, 181, 0.3);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 119, 181, 0.3);
 }
 
 .linkedin-btn i {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .profile-card::before {
@@ -1023,8 +1022,89 @@ opacity: 1;
 transform: translateY(0);
 }
 
+.founder-badge {
+  position: absolute;
+  top: 20px;
+  right: -65px;
+  background: linear-gradient(45deg, var(--primary-blue), #2280bb);
+  color: white;
+  width: 240px;
+  transform: rotate(45deg);
+  padding: 8px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 800; /* زيادة سمك الخط */
+  letter-spacing: 0.5px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex; /* لضمان التوسيط التام */
+  justify-content: center;
+  align-items: center;
+}
 
+/* الحواف المنطوية */
+.founder-badge::before,
+.founder-badge::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  border-top: 4px solid #015c70;
+  border-bottom: 4px solid transparent;
+  z-index: -1;
+}
 
+.founder-badge::before {
+  left: 0;
+  border-left: 4px solid #015c70;
+  border-right: 4px solid transparent;
+}
+
+.founder-badge::after {
+  right: 0;
+  border-right: 4px solid #015c70;
+  border-left: 4px solid transparent;
+}
+
+/* تأثير لامع محسن */
+.founder-badge span {
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  transform: translateY(-1px); /* تعديل طفيف للموقع العمودي */
+}
+
+.founder-badge span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.2),
+      transparent
+  );
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+      left: -100%;
+  }
+  50%, 100% {
+      left: 100%;
+  }
+}
+
+/* تحسين التفاعل */
+.profile-card:hover .founder-badge {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  background: linear-gradient(45deg, #2280bb, var(--primary-blue));
+}
 :root {
     --color-primary: #01acd3;
     --color-secondary: #01acd3;
