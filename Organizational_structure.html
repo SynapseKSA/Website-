@@ -21,32 +21,63 @@
         <nav>
           <ul class="nav-links">
             <li>
-              <a href="/index.html" class="active"
-                ><i class="fas fa-home"></i> الرئيسية</a
-              >
+              <a href="/index.html" class="active">
+                <i class="fas fa-home"></i> الرئيسية
+              </a>
             </li>
             <li>
-              <a href="#about"><i class="fas fa-info-circle"></i> من نحن</a>
+              <a href="/index.html#about">
+                <i class="fas fa-info-circle"></i> من نحن
+              </a>
             </li>
             <li>
-              <a href="#services"
-                ><i class="fas fa-hand-holding-heart"></i> خدماتنا</a
-              >
+              <a href="/index.html#services">
+                <i class="fas fa-hand-holding-heart"></i> خدماتنا
+              </a>
             </li>
-
             <li>
-              <a href="#workshops"
-                ><i class="fas fa-chalkboard-teacher"></i> ورش العمل</a
-              >
+              <a href="/index.html#workshops">
+                <i class="fas fa-chalkboard-teacher"></i> ورش العمل
+              </a>
             </li>
-
             <li>
-              <a href="../Website-/Organizational_structure.html"
-                ><i class="fas fa-lightbulb"></i> الهيكل التنظيمي</a
-              >
+              <a href="../Website-/Organizational_structure.html">
+                <i class="fas fa-lightbulb"></i> الهيكل التنظيمي
+              </a>
             </li>
           </ul>
         </nav>
+        
+        <script>
+        // للانتقال السلس
+        document.addEventListener('DOMContentLoaded', function() {
+            // التحقق إذا كان هناك هاش في الرابط
+            if (window.location.hash) {
+                // الانتظار قليلاً قبل الانتقال
+                setTimeout(function() {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+        
+            // إضافة المستمع لكل الروابط التي تحتوي على هاش
+            document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // التحقق من أن الرابط في نفس الصفحة
+                    if (this.href.includes(window.location.pathname)) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').split('#')[1];
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        });
+        </script>
         <button class="mobile-menu-btn">
           <i class="fas fa-bars"></i>
         </button>
@@ -818,78 +849,75 @@ document.addEventListener("DOMContentLoaded", () => {
   startSlideShow();
 </script>
 
-    <footer class="footer">
-      <div class="footer-particles" id="particles"></div>
-      <div class="footer-container">
-        <div class="footer-grid">
-          <div class="footer-section">
-            <h2 class="footer-title">تواصل معنا</h2>
-            <div class="contact-card">
-              <div class="contact-content">
-                <div class="contact-icon">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-info">
-                  <h3>اتصل بنا</h3>
-                  <p>+966 55555555</p>
-                </div>
-              </div>
+   
+<footer class="footer">
+  <div class="footer-particles" id="particles"></div>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h2 class="footer-title">تواصل معنا</h2>
+        <div class="contact-card">
+          <div class="contact-content">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
             </div>
-            <div class="contact-card">
-              <div class="contact-content">
-                <div class="contact-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-info">
-                  <h3>العنوان</h3>
-                  <p>جدة,المملكة العربية السعودية</p>
-                </div>
-              </div>
-            </div>
-            <div class="social-grid">
-              <a href="#" class="social-link">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-link">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-link">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#" class="social-link">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="footer-section">
-            <h2 class="footer-title">روابط سريعة</h2>
-            <div class="quick-links">
-              <div class="quick-link">
-                <a href="#">الرئيسية</a>
-              </div>
-              <div class="quick-link">
-                <a href="#">من نحن</a>
-              </div>
-              <div class="quick-link">
-                <a href="#">خدماتنا</a>
-              </div>
-              <div class="quick-link">
-                <a href="#">المشاريع</a>
-              </div>
-              <div class="quick-link">
-                <a href="#">الأخبار</a>
-              </div>
-              <div class="quick-link">
-                <a href="#">اتصل بنا</a>
-              </div>
+            <div class="contact-info">
+              <h3>اتصل بنا</h3>
+              <p>+966 55555555</p>
             </div>
           </div>
         </div>
+        <div class="contact-card">
+          <div class="contact-content">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-info">
+              <h3>العنوان</h3>
+              <p>جدة,المملكة العربية السعودية</p>
+            </div>
+          </div>
+        </div>
+        <div class="social-grid">
+         
+          <a href="https://x.com/synapseksa?s=21&t=Ofivr9BCWk8_DYwC7TFv-w" class="social-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/synapseksa/posts/?feedView=all" class="social-link">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p>جميع الحقوق محفوظة © 2025 Synapse - المملكة العربية السعودية</p>
+
+      <div class="footer-section">
+        <h2 class="footer-title">روابط سريعة</h2>
+        <div class="quick-links">
+          <div class="quick-link">
+            <a href="/index.html">الرئيسية</a>
+          </div>
+          <div class="quick-link" >
+            <a href="#about">من نحن</a>
+          </div>
+          <div class="quick-link">
+            <a href="services">خدماتنا</a>
+          </div>
+          <div class="quick-link">
+            <a href="#">المشاريع</a>
+          </div>
+          <div class="quick-link">
+            <a href="#">الأخبار</a>
+          </div>
+          <div class="quick-link">
+            <a href="mailto:SynapseAdmin@synapseksa.com">اتصل بنا</a>
+        </div>
+        </div>
       </div>
-    </footer>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>جميع الحقوق محفوظة © 2025 Synapse - المملكة العربية السعودية</p>
+  </div>
+</footer>
   </body>
 </html>
