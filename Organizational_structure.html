@@ -21,22 +21,22 @@
         <nav>
           <ul class="nav-links">
             <li>
-              <a href="../Website-/index.html">الرئيسية</a>
+              <a href="../Website-/index.html" class="active">
                 <i class="fas fa-home"></i> الرئيسية
               </a>
             </li>
             <li>
-              <a href="/index.html#about">
+              <a href="../Website-/index.html#about">
                 <i class="fas fa-info-circle"></i> من نحن
               </a>
             </li>
             <li>
-              <a href="/index.html#services">
+              <a href="../Website-/index.html#services">
                 <i class="fas fa-hand-holding-heart"></i> خدماتنا
               </a>
             </li>
             <li>
-              <a href="/index.html#workshops">
+              <a href="../Website-/index.html#workshops">
                 <i class="fas fa-chalkboard-teacher"></i> ورش العمل
               </a>
             </li>
@@ -47,6 +47,33 @@
             </li>
           </ul>
         </nav>
+        
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.location.hash) {
+                setTimeout(function() {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+        
+            document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href.includes('index.html#')) {
+                        const targetId = href.split('#')[1];
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        });
+        </script>
         
         <script>
         // للانتقال السلس
@@ -848,8 +875,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startSlideShow();
 </script>
-
-   
 <footer class="footer">
   <div class="footer-particles" id="particles"></div>
   <div class="footer-container">
@@ -879,14 +904,12 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
         <div class="social-grid">
-         
           <a href="https://x.com/synapseksa?s=21&t=Ofivr9BCWk8_DYwC7TFv-w" class="social-link">
             <i class="fab fa-twitter"></i>
           </a>
           <a href="https://www.linkedin.com/company/synapseksa/posts/?feedView=all" class="social-link">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          
         </div>
       </div>
 
@@ -896,21 +919,21 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="quick-link">
             <a href="../Website-/index.html">الرئيسية</a>
           </div>
-          <div class="quick-link" >
-            <a href="#about">من نحن</a>
+          <div class="quick-link">
+            <a href="../Website-/index.html#about">من نحن</a>
           </div>
           <div class="quick-link">
-            <a href="services">خدماتنا</a>
+            <a href="../Website-/index.html#services">خدماتنا</a>
           </div>
           <div class="quick-link">
-            <a href="#">المشاريع</a>
+            <a href="../Website-/index.html#projects">المشاريع</a>
           </div>
           <div class="quick-link">
-            <a href="#">الأخبار</a>
+            <a href="../Website-/index.html#news">الأخبار</a>
           </div>
           <div class="quick-link">
             <a href="mailto:SynapseAdmin@synapseksa.com">اتصل بنا</a>
-        </div>
+          </div>
         </div>
       </div>
     </div>
@@ -919,5 +942,32 @@ document.addEventListener("DOMContentLoaded", () => {
     <p>جميع الحقوق محفوظة © 2025 Synapse - المملكة العربية السعودية</p>
   </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+        setTimeout(function() {
+            const targetElement = document.querySelector(window.location.hash);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 100);
+    }
+
+    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href.includes('index.html#')) {
+                const targetId = href.split('#')[1];
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+</script>
   </body>
 </html>
