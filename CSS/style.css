@@ -1053,11 +1053,11 @@ nav {
   stroke: #f8f9fa;
   position: absolute;
   left: 0;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .curveUpColor {
-  margin-top: -100px;
+  margin-top: -98px;
 }
 
 .curveMapUp {
@@ -1282,7 +1282,7 @@ nav {
   filter: brightness(90%);
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 60rem;
+  min-height: 50rem;
   display: flex;
   align-items: center;
   position: relative;
