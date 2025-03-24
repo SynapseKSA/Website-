@@ -164,11 +164,11 @@ header.scrolled {
   overflow: hidden;
   background: linear-gradient(
     135deg,
-    #e87d34,
-    #d4e14f,
-    #84cd81,
     #01acd3,
-    #008aff
+    #7a8f78,
+    #3b9b9f,
+    #01acd3,
+    #b17f5c
   );
   background-size: 300% 300%;
   animation: gradientAnimation 15s ease infinite;
@@ -189,8 +189,8 @@ header.scrolled {
 }
 
 .logoINnav img {
-  width: 100%;
-  height: 100%;
+  width: 980px;
+  height: 180px;
   object-fit: contain;
   transition: all 0.3s ease;
   border-radius: 8px;
