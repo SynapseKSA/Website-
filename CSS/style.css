@@ -1046,7 +1046,7 @@ nav {
   stroke: #f8f9fa;
   position: absolute;
   left: 0;
-  z-index: 1000;
+  z-index: 5;
 }
 
 .curveUpColor {
