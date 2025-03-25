@@ -1523,7 +1523,7 @@ nav {
 /* Responsive Styles */
 @media screen and (max-width: 1200px) {
   .about-grid {
-    gap: 3rem;
+    /* gap: 3rem; */
   }
 
   .main-text,
