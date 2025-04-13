@@ -1046,7 +1046,7 @@ nav {
   stroke: #f8f9fa;
   position: absolute;
   left: 0;
-  z-index: 1000;
+  z-index: 5;
 }
 
 .curveUpColor {
@@ -1523,7 +1523,7 @@ nav {
 /* Responsive Styles */
 @media screen and (max-width: 1200px) {
   .about-grid {
-    gap: 3rem;
+    /* gap: 3rem; */
   }
 
   .main-text,
