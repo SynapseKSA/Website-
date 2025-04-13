@@ -240,43 +240,110 @@
     <section class="workshops-container" id="workshops"></section>
   </section>
 
+ 
   <div class="title-container">
     <h1 class="workshop-title">ورش العمل</h1>
-  </div>
-  <div class="container">
-    <div class="card" data-type="finance">
-      <span class="tag">مالية</span>
-      <h2 class="title-ar">التحليل المالي</h2>
-      <h3 class="title-en">Financial Analysis</h3>
-      <p class="description">
-        دورة شاملة في التحليل المالي والاستثمار. تعلم كيفية تحليل القوائم
-        المالية واتخاذ القرارات الاستثمارية السليمة .
-      </p>
-      <button class="register-btn">التسجيل الآن</button>
-    </div>
+</div>
 
-    <div class="card" data-type="management">
-      <span class="tag">إدارة</span>
-      <h2 class="title-ar">إدارة المشاريع</h2>
-      <h3 class="title-en">Project Management</h3>
-      <p class="description">
-        دورة متقدمة في إدارة المشاريع الاحترافية. تعلم أحدث منهجيات الإدارة
-        وأدوات التخطيط والتنفيذ .
-      </p>
-      <button class="register-btn">التسجيل الآن</button>
-    </div>
+<div class="slider-wrapper">
+    <div class="container">
+        <div class="slider-track">
+            <!-- Card 1 -->
+            <div class="card">
+                <span class="tag">مالية</span>
+                <h2 class="title-ar">التحليل المالي</h2>
+                <h3 class="title-en">Financial Analysis</h3>
+                <p class="description">
+                    دورة شاملة في التحليل المالي والاستثمار. تعلم كيفية تحليل القوائم
+                    المالية واتخاذ القرارات الاستثمارية السليمة.
+                </p>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div>
 
-    <div class="card" data-type="marketing">
-      <span class="tag">تسويق</span>
-      <h2 class="title-ar">التسويق الرقمي</h2>
-      <h3 class="title-en">Digital Marketing</h3>
-      <p class="description">
-        دورة احترافية في التسويق الرقمي. اكتشف أحدث استراتيجيات التسويق وأدوات
-        التحليل الرقمية .
-      </p>
-      <button class="register-btn">التسجيل الآن</button>
+            <!-- Card 2 -->
+            <div class="card">
+                <span class="tag">إدارة</span>
+                <h2 class="title-ar">إدارة المشاريع</h2>
+                <h3 class="title-en">Project Management</h3>
+                <p class="description">
+                    دورة متقدمة في إدارة المشاريع الاحترافية. تعلم أحدث منهجيات الإدارة
+                    وأدوات التخطيط والتنفيذ.
+                </p>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <span class="tag">تسويق</span>
+                <h2 class="title-ar">التسويق الرقمي</h2>
+                <h3 class="title-en">Digital Marketing</h3>
+                <p class="description">
+                    دورة احترافية في التسويق الرقمي. اكتشف أحدث استراتيجيات التسويق وأدوات
+                    التحليل الرقمية.
+                </p>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div>
+
+            <!-- Card 4 (Hidden Initially) -->
+            <div class="card hidden">
+                <span class="tag">تقنية</span>
+                <h2 class="title-ar">الذكاء الاصطناعي</h2>
+                <h3 class="title-en">Artificial Intelligence</h3>
+                <p class="description">
+                    تعرف على أساسيات الذكاء الاصطناعي وتطبيقاته العملية في مجال الأعمال
+                    والتكنولوجيا الحديثة.
+                </p>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div>
+
+            <!-- Card 5 (Hidden Initially) -->
+            <div class="card hidden">
+                <span class="tag">تطوير</span>
+                <h2 class="title-ar">تطوير التطبيقات</h2>
+                <h3 class="title-en">App Development</h3>
+                <p class="description">
+                    تعلم كيفية تطوير تطبيقات الهواتف الذكية باستخدام أحدث التقنيات
+                    وأطر العمل المتقدمة.
+                </p>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div>
+        </div>
     </div>
-  </div>
+    
+    <button class="more-workshops-btn">
+        <span>انقر للمزيد من ورش العمل</span>
+        <div class="arrow"></div>
+    </button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const moreBtn = document.querySelector('.more-workshops-btn');
+        const hiddenCards = document.querySelectorAll('.card.hidden');
+        let isExpanded = false;
+
+        moreBtn.addEventListener('click', function() {
+            if (!isExpanded) {
+                hiddenCards.forEach(card => {
+                    card.classList.remove('hidden');
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 100);
+                });
+                moreBtn.innerHTML = '<span>عرض أقل</span><div class="arrow" style="transform: rotate(180deg)"></div>';
+            } else {
+                hiddenCards.forEach(card => {
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.classList.add('hidden');
+                    }, 600);
+                });
+                moreBtn.innerHTML = '<span>انقر للمزيد من ورش العمل</span><div class="arrow"></div>';
+            }
+            isExpanded = !isExpanded;
+        });
+    });
+</script>
 
   <!-- Modal -->
   <div class="modal">
