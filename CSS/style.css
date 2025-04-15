@@ -151,6 +151,11 @@ header.scrolled {
   position: relative;
 }
 
+.curveDownColor {
+  position: relative;
+  z-index: 1;
+}
+
 .logoINnav {
   width: 180px;
   height: 45px;
@@ -1046,8 +1051,9 @@ nav {
   stroke: #f8f9fa;
   position: absolute;
   left: 0;
-  z-index: 1000;
+  z-index: 1; /* أقل من navbar */
 }
+
 
 .curveUpColor {
   margin-top: -98px;

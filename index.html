@@ -250,7 +250,7 @@
             <!-- Card 1 -->
             <div class="card">
                 <span class="tag">جدة</span>
-                <h2 class="title-ar">الذكاء الاصطناعي المتقدم</h2>
+                <h2 class="title-ar"> الذكاء الاصطناعي المتقدم</h2>
                 <h3 class="title-en">Advanced AI</h3>
                 <p class="description">
                   متخصصون الذكاء الاصطناعي والتكنولوجيا الذين يسعون إلى تعميق خبراتهم من 
@@ -262,7 +262,7 @@
             <!-- Card 2 -->
             <div class="card">
                 <span class="tag">جدة</span>
-                <h2 class="title-ar">التكنولوجيا المالية </h2>
+                <h2 class="title-ar">الذكاء الاصطناعي و التقنية المالية </h2>
                 <h3 class="title-en"> Fintech </h3>
                 <p class="description">
                   متخصصون/ طلاب المالية والمحاسبة المهتمون بتطبيق الذكاء الاصطناعي في المهام اليومية أو التحولات المهنية
@@ -273,7 +273,7 @@
             <!-- Card 3 -->
             <div class="card">
                 <span class="tag">جدة</span>
-                <h2 class="title-ar"> ذكاء الأعمال والسياحة</h2>
+                <h2 class="title-ar">الذكاء الاصطناعي و الاعمال</h2>
                 <h3 class="title-en">Business Intelligence & Tourism</h3>
                 <p class="description">
                   متخصصون الأعمال والطلاب الذين يتطلعون إلى تحسين جودة سير العمل وأتمتة العمليات باستخدام الذكاء الاصطناعي وأدوات البيانات
@@ -284,7 +284,7 @@
             <!-- Card 4 (Hidden Initially) -->
             <div class="card hidden">
                 <span class="tag">عن بعد</span>
-                <h2 class="title-ar">الطب والهندسة </h2>
+                <h2 class="title-ar">الذكاء الصناعي في الهندسة والطب</h2>
                 <h3 class="title-en">Medicine & Engineering</h3>
                 <p class="description">
                   متخصصون الرعاية الصحية والطلاب والأطباء الذين يبحثون عن تحديثات وتطبيقات عملية في مجال الذكاء الاصطناعي
@@ -296,7 +296,7 @@
             <!-- Card 5 (Hidden Initially) -->
             <div class="card hidden">
                 <span class="tag">عن بعد</span>
-                <h2 class="title-ar">التعليم </h2>
+                <h2 class="title-ar">الذكاء الصناعي في التعليم والبحوث</h2>
                 <h3 class="title-en">Education</h3>
                 <p class="description">
                   المعلمون من جميع المستويات الذين يسعون إلى الاستفادة من الذكاء الاصطناعي لأتمتة المهام وتحسين أساليب التدريس
@@ -351,86 +351,177 @@
       </div>
     </div>
   </div>
-
   <script>
-    // Register button click
-    document.querySelectorAll(".register-btn").forEach((btn) => {
-      btn.addEventListener("click", function (e) {
-        const modal = document.querySelector(".modal");
-        const modalBody = modal.querySelector(".modal-body");
-        const card = this.closest(".card");
-
-        const title = card.querySelector(".title-ar").textContent;
-        const type = card.querySelector(".tag").textContent;
-
-        modalBody.innerHTML = `
-                  <h3 style="color: var(--primary-color); margin-bottom: 1rem;">${type}</h3>
-                  <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">${title}</h2>
-                  
-                  <div class="modal-details">
-                      <div class="detail-item">
-                          <div class="detail-label">مدة الدورة</div>
-                          <div class="detail-value">3 أشهر</div>
-                      </div>
-                      <div class="detail-item">
-                          <div class="detail-label">الرسوم</div>
-                          <div class="detail-value">لايوجد</div>
-                      </div>
-                      <div class="detail-item">
-                          <div class="detail-label">المقاعد المتاحة</div>
-                          <div class="detail-value">20 مقعد</div>
-                      </div>
-                      <div class="detail-item">
-                          <div class="detail-label">نوع الحضور</div>
-                          <div class="detail-value">حضوري</div>
-                      </div>
-                  </div>
-
-                  <div class="course-schedule">
-                      <h4 class="schedule-title">مواعيد الدورة</h4>
-                      <ul class="schedule-list">
-                          <li class="schedule-item">
-                              <span>الأحد</span>
-                              <span>4:00 - 8:00 مساءً</span>
-                          </li>
-                          <li class="schedule-item">
-                              <span>الثلاثاء</span>
-                              <span>4:00 - 8:00 مساءً</span>
-                          </li>
-                          <li class="schedule-item">
-                              <span>الخميس</span>
-                              <span>4:00 - 8:00 مساءً</span>
-                          </li>
-                      </ul>
-                  </div>
-
-                  <div class="instructor-info">
-                      <img src="https://picsum.photos/200" alt="المدرب" class="instructor-image">
-                      <div class="instructor-details">
-                          <h4>نوف الجدعاني<h4>
-                          <p>خبير في مجال ${type} مع خبرة تزيد عن 00 عاماً في التدريب والاستشارات</p>
-                      </div>
-                  </div>
-
-                  <button class="register-btn" style="margin-top: 2rem;">التسجيل</button>
-              `;
-
-        modal.classList.add("show");
-      });
-    });
-
-    // Close modal
-    document.querySelector(".modal-close").addEventListener("click", () => {
-      document.querySelector(".modal").classList.remove("show");
-    });
-
-    // Close modal when clicking outside
-    document.querySelector(".modal").addEventListener("click", (e) => {
-      if (e.target === document.querySelector(".modal")) {
-        document.querySelector(".modal").classList.remove("show");
+  const workshopData = {
+    "الذكاء الاصطناعي المتقدم": {
+      duration: "يوم",
+      fees: "لا يوجد",
+      seats: "25",
+      attendance: "حضوري",
+      schedule: [
+        { day: "20/04/2025 - الاحد", time: "5:00 - 8:00 مساءً" },
+      ],
+      instructor: {
+        name: "TBD",
+        image: "https://i.pinimg.com/474x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg",
+        bio: "-------"
       }
+    },
+    "الذكاء الاصطناعي و التقنية المالية": {
+      duration: "يوم",
+      fees: "لايوجد",
+      seats: "25 مقعد",
+      attendance: "حضوري",
+      schedule: [
+        { day: "21/04/2025 - الاثنين", time: "5:00 - 8:00 مساءً" },
+      ],
+      instructor: {
+        name: "البراء السعيدي ",
+        image: "https://media.licdn.com/dms/image/v2/D4E03AQFJWpa1V06C1w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1699106487119?e=1750291200&v=beta&t=PGf42mIQxdGz1lnlRLKHCx8IKicTAHgm8Ik3oyMTSPo",
+        bio: "مؤسس شركة Baraa Financial Consulting ومستشار في نادي الاستشارات الهندسية (ECC). يمتلك خبرة واسعة في التحليل المالي وقيادة المبادرات، ويجمع بين الشغف بالفنتك والاستشارات ."
+      }
+    },
+    "الذكاء الاصطناعي و الاعمال": {
+      duration: "يوم",
+      fees: "لايوجد",
+      seats: "25 مقعد",
+      attendance: "حضوري",
+      schedule: [
+        { day: "22/04/2025 -الثلاثاء", time: "6:00 - 9:00 مساءً" },
+      ],
+      instructor: {
+        name: "د. أماني السلمي",
+        image: "https://media.licdn.com/dms/image/v2/C4E03AQHcJJkClJ4MUQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1639924127094?e=1750291200&v=beta&t=kXtcdVYlCLmPC4Z-VQLVri5BML22VHbQpNdQFUu_FY4",
+        bio: "باحث ومستشار متخصص في الذكاء الاصطناعي وتعلم الآلة. حاصل على شهادة الدكتوراه في الهندسة الصناعية وأنظمة المعلومات من جامعة فيرجينيا تك."
+      }
+    },
+    "الذكاء الصناعي في الهندسة والطب": {
+      duration: "يوم",
+      fees: "لايوجد",
+      seats: "25 مقعد",
+      attendance: "عن بعد",
+      schedule: [
+        { day: "23/04/2025 - الثلاثاء", time: "5:00 - 8:00 مساءً" },
+      ],
+      instructors: [
+        {
+          name: "د. محمد باعوم",
+          image: "https://picsum.photos/203",
+          bio: "باحث ومستشار متخصص في الذكاء الاصطناعي وتعلم الآلة. حاصل على شهادة الدكتوراه في الهندسة الصناعية وأنظمة المعلومات من جامعة فيرجينيا تك. عمل على مشاريع مبتكرة تشمل تحسين كفاءة الأقسام الطارئة في Mayo Clinic باستخدام الذكاء الاصطناعي، وتطوير نماذج للتنبؤ بالأوبئة، وتحسين أنظمة الطاقة المتجددة باستخدام تقنيات الذكاء الاصطناعي"
+        },
+        {
+          name: "د.م. محمد",
+          image: "https://pbs.twimg.com/profile_images/1882236577566412800/wqB3L66U_400x400.jpg",
+          bio: "طبيب , عالم , و مهندس في الذكاء الاصطناعي | مدير قسم الأبحاث السريرية والذكاء الاصطناعي السريري في ASIDE Healthcare | أستاذ مساعد زائر في جامعة سيول الوطنية"
+        }
+      ]
+    },
+    "الذكاء الصناعي في التعليم والبحوث": {
+      duration: "يوم",
+      fees: "لايوجد",
+      seats: "25 مقعد",
+      attendance: "عن بعد",
+      schedule: [
+        { day: "24/04/2025 - الاربعاء", time: "5:00 - 8:00 مساءً" },
+      ],
+      instructor: {
+        name: "TBD",
+        image: "https://i.pinimg.com/474x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg",
+        bio: "---------"
+      }
+    }
+  };
+  
+  document.querySelectorAll(".register-btn").forEach((btn) => {
+    btn.addEventListener("click", function() {
+      const modal = document.querySelector(".modal");
+      const modalBody = modal.querySelector(".modal-body");
+      const card = this.closest(".card");
+  
+      const title = card.querySelector(".title-ar").textContent.trim();
+      const type = card.querySelector(".tag").textContent;
+      const data = workshopData[title];
+  
+      const scheduleHTML = data.schedule.map(item => `
+        <li class="schedule-item">
+          <span>${item.day}</span>
+          <span>${item.time}</span>
+        </li>
+      `).join("");
+  
+      // التحقق مما إذا كان هناك مدربان أو مدرب واحد
+      const instructorHTML = data.instructors ? 
+        data.instructors.map(instructor => `
+          <div class="instructor-info">
+            <img src="${instructor.image}" alt="${instructor.name}" class="instructor-image">
+            <div class="instructor-details">
+              <h4>${instructor.name}</h4>
+              <p>${instructor.bio}</p>
+            </div>
+          </div>
+        `).join("")
+        :
+        `<div class="instructor-info">
+          <img src="${data.instructor.image}" alt="${data.instructor.name}" class="instructor-image">
+          <div class="instructor-details">
+            <h4>${data.instructor.name}</h4>
+            <p>${data.instructor.bio}</p>
+          </div>
+        </div>`;
+  
+      modalBody.innerHTML = `
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">${type}</h3>
+        <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">${title}</h2>
+        
+        <div class="modal-details">
+          <div class="detail-item">
+            <div class="detail-label">مدة الدورة</div>
+            <div class="detail-value">${data.duration}</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">الرسوم</div>
+            <div class="detail-value">${data.fees}</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">المقاعد المتاحة</div>
+            <div class="detail-value">${data.seats}</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">نوع الحضور</div>
+            <div class="detail-value">${data.attendance}</div>
+          </div>
+        </div>
+  
+        <div class="course-schedule">
+          <h4 class="schedule-title">مواعيد الدورة</h4>
+          <ul class="schedule-list">
+            ${scheduleHTML}
+          </ul>
+        </div>
+  
+        <div class="instructors-section">
+          <h4 class="instructors-title" style="margin-bottom: 1rem;">المدربون</h4>
+          ${instructorHTML}
+        </div>
+  
+        <button class="register-btn" style="margin-top: 2rem;">التسجيل</button>
+      `;
+  
+      modal.classList.add("show");
     });
+  });
+  
+  document.querySelector(".modal-close").addEventListener("click", () => {
+    document.querySelector(".modal").classList.remove("show");
+  });
+  
+  document.querySelector(".modal").addEventListener("click", (e) => {
+    if (e.target === document.querySelector(".modal")) {
+      document.querySelector(".modal").classList.remove("show");
+    }
+  });
   </script>
+  
 <!---------------------------------احصائيات------------------------------------->
   <!-- <div class="divider-container">
     <div class="gradient-banner"></div>
