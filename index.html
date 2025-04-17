@@ -263,7 +263,7 @@
             <div class="card">
                 <span class="tag">جدة</span>
                 <h2 class="title-ar">الذكاء الاصطناعي و التقنية المالية </h2>
-                <h3 class="title-en"> Fintech </h3>
+                <h3 class="title-en"> Fintech</h3>
                 <p class="description">
                   متخصصون طلاب المالية والمحاسبة المهتمون بتطبيق الذكاء الاصطناعي في المهام اليومية أو التحولات المهنية
                 </p>
@@ -358,6 +358,7 @@
       fees: "لا يوجد",
       seats: "25",
       attendance: "حضوري",
+      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
       schedule: [
         { day: "20/04/2025 - الاحد", time: "7:00 - 9:00 مساءً" },
       ],
@@ -372,20 +373,42 @@
       fees: "لايوجد",
       seats: "25 مقعد",
       attendance: "حضوري",
+      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
       schedule: [
         { day: "21/04/2025 - الاثنين", time: "7:00 - 9:00 مساءً" },
       ],
-      instructor: {
-        name: "البراء السعيدي ",
-        image: "https://media.licdn.com/dms/image/v2/D4E03AQFJWpa1V06C1w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1699106487119?e=1750291200&v=beta&t=PGf42mIQxdGz1lnlRLKHCx8IKicTAHgm8Ik3oyMTSPo",
-        bio: "مؤسس شركة Baraa Financial Consulting ومستشار في نادي الاستشارات الهندسية (ECC). يمتلك خبرة واسعة في التحليل المالي وقيادة المبادرات، ويجمع بين الشغف بالفنتك والاستشارات ."
-      }
+      instructors: [
+  {
+    name: "Dr. Adnan Al-Bar",
+    image: "Assets/Dr. Adnan Al-Bar.jpg", // استخدم مسار صحيح للصورة
+    bio: `Partner and Founder:
+    - Ershad Business Consulting for Financial Advisory
+    - Seen Tarbi for Financial Technology Company
+
+Over 30 years of experience in the finance field  
+Master’s in Management, USA-OH  
+Bachelor’s in Accounting, KSA-KAU  
+Certified Professional Trainer from IATA  
+Designing and delivering financial courses`
+  },
+  {
+    name: "Abdullah Bawazeer",
+    image: "Assets/Abdullah Bawazeer.jpg",
+    bio: `CEO of Seen Tarbi for Financial Technology Company
+
+Head of the Advisory Office for Digital Business Solutions  
+Digital Transformation and Emerging Technologies Consultant`
+  }
+]
     },
+
+
     "الذكاء الاصطناعي و الاعمال": {
       duration: "يوم",
       fees: "لايوجد",
       seats: "25 مقعد",
       attendance: "حضوري",
+      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
       schedule: [
         { day: "22/04/2025 -الثلاثاء", time: "7:00 - 9:00 مساءً" },
       ],
@@ -400,6 +423,7 @@
       fees: "لايوجد",
       seats: "25 مقعد",
       attendance: "عن بعد",
+      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
       schedule: [
         { day: "23/04/2025 - الثلاثاء", time: "7:00 - 9:00 مساءً" },
       ],
@@ -421,6 +445,7 @@
       fees: "لايوجد",
       seats: "25 مقعد",
       attendance: "عن بعد",
+      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
       schedule: [
         { day: "24/04/2025 - الاربعاء", time: "7:00 - 9:00 مساءً" },
       ],
@@ -504,7 +529,7 @@
           ${instructorHTML}
         </div>
   
-        <button class="register-btn" style="margin-top: 2rem;">التسجيل</button>
+        <a href="${data.link}" target="_blank" class="register-btn" style="margin-top: 2rem; display: inline-block; text-align: center;">التسجيل</a>
       `;
   
       modal.classList.add("show");
