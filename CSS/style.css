@@ -1054,7 +1054,6 @@ nav {
   z-index: 1; /* أقل من navbar */
 }
 
-
 .curveUpColor {
   margin-top: -98px;
 }
@@ -1277,7 +1276,7 @@ nav {
 .about-section {
   padding: 6rem 2rem;
   /* background: linear-gradient(to bottom, #fff, #f8f9fa); */
-  background-image: url(../Assets/synapse_elements-0٢.png);
+  background-image: url(../Assets/dark.png);
   filter: brightness(90%);
   background-repeat: no-repeat;
   background-size: cover;
@@ -1741,7 +1740,6 @@ nav {
   font-size: 0.9rem;
 }
 
-
 .social-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1789,7 +1787,7 @@ nav {
   .social-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   /* الحفاظ على توسيط الأيقونات في الشاشات الصغيرة */
   .social-link:nth-child(1) {
     grid-column: 2 / 3;
@@ -2337,7 +2335,6 @@ nav {
   --border-color: rgba(255, 255, 255, 0.2);
 }
 
-
 .title-container {
   text-align: center;
   margin-bottom: 3rem;
@@ -2348,8 +2345,8 @@ nav {
 
 @keyframes fadeInUp {
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -2363,13 +2360,17 @@ nav {
 }
 
 .workshop-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 25%;
   width: 50%;
   height: 4px;
-  background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    to left,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border-radius: 4px;
   transform: scaleX(0);
   animation: expandWidth 0.8s ease forwards 0.6s;
@@ -2378,7 +2379,7 @@ nav {
 
 @keyframes expandWidth {
   to {
-      transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 
@@ -2415,9 +2416,8 @@ nav {
   padding: 2.5rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 
-      0 10px 30px var(--shadow-color),
-      inset 0 0 0 1px var(--border-color);
+  box-shadow: 0 10px 30px var(--shadow-color),
+    inset 0 0 0 1px var(--border-color);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
@@ -2435,34 +2435,43 @@ nav {
 
 @keyframes fadeInUpCard {
   from {
-      opacity: 0;
-      transform: translateY(30px) scale(0.95);
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
   }
   to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
-.card:nth-child(1) { animation-delay: 0.2s; }
-.card:nth-child(2) { animation-delay: 0.4s; }
-.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.6s;
+}
 
 .card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 
-      0 20px 40px rgba(0, 0, 0, 0.12),
-      inset 0 0 0 2px var(--primary-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 2px var(--primary-color);
 }
 
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    to left,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   transform: scaleX(0);
   transition: transform 0.3s ease;
   transform-origin: right;
@@ -2527,7 +2536,11 @@ nav {
 }
 
 .register-btn {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   color: white;
   padding: 1.2rem 2rem;
   border-radius: 12px;
@@ -2543,13 +2556,17 @@ nav {
 }
 
 .register-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color) 0%,
+    var(--primary-color) 100%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -2604,7 +2621,7 @@ nav {
 
 .arrow::before,
 .arrow::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   width: 12px;
@@ -2626,38 +2643,42 @@ nav {
 }
 
 @keyframes bounceDown {
-  0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
   }
   40% {
-      transform: translateY(5px);
+    transform: translateY(5px);
   }
   60% {
-      transform: translateY(3px);
+    transform: translateY(3px);
   }
 }
 
 @media (max-width: 1200px) {
   .card {
-      flex: 0 0 calc((100% - 2rem) / 2);
+    flex: 0 0 calc((100% - 2rem) / 2);
   }
 }
 
 @media (max-width: 768px) {
   .container {
-      padding: 0 1.5rem;
+    padding: 0 1.5rem;
   }
-  
+
   .card {
-      flex: 0 0 100%;
+    flex: 0 0 100%;
   }
-  
+
   .workshop-title {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .more-workshops-btn {
-      font-size: 1.1rem;
-      padding: 1rem 2rem;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
   }
 }
