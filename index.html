@@ -1,391 +1,449 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سنابس</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>سنابس</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="Assets/Logo.jpg" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="Assets/Logo.jpg" />
-  <link rel="stylesheet" href="CSS/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-</head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="#" class="logoINnav">
+          <div class="logo-inner">
+            <img src="Assets/logo.PNG" alt="شعار الموقع" />
+          </div>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li>
+              <a href="../Website-/index.html" class="active"
+                ><i class="fas fa-home"></i> الرئيسية</a
+              >
+            </li>
+            <li>
+              <a href="#about"><i class="fas fa-info-circle"></i> من نحن</a>
+            </li>
+            <li>
+              <a href="#services"
+                ><i class="fas fa-hand-holding-heart"></i> خدماتنا</a
+              >
+            </li>
 
-<body>
-  <header>
-    <div class="header-container">
-      <a href="#" class="logoINnav">
-        <div class="logo-inner">
-          <img src="Assets/logo.PNG" alt="شعار الموقع" />
-        </div>
-      </a>
-      <nav>
-        <ul class="nav-links">
-          <li>
-            <a href="../Website-/index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a>
-          </li>
-          <li>
-            <a href="#about"><i class="fas fa-info-circle"></i> من نحن</a>
-          </li>
-          <li>
-            <a href="#services"><i class="fas fa-hand-holding-heart"></i> خدماتنا</a>
-          </li>
+            <li>
+              <a href="#workshops"
+                ><i class="fas fa-chalkboard-teacher"></i> ورش العمل</a
+              >
+            </li>
 
-          <li>
-            <a href="#workshops"><i class="fas fa-chalkboard-teacher"></i> ورش العمل</a>
-          </li>
+            <li>
+              <a href="../Website-/Organizational_structure.html"
+                ><i class="fas fa-lightbulb"></i> الهيكل التنظيمي</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
 
-          <li>
-            <a href="../Website-/Organizational_structure.html"><i class="fas fa-lightbulb"></i> الهيكل التنظيمي</a>
-          </li>
-        </ul>
-      </nav>
-      <button class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
+    <script>
+      const header = document.querySelector("header");
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector("nav");
 
-  <script>
-    const header = document.querySelector("header");
-    const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-    const nav = document.querySelector("nav");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 30) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    });
-
-    mobileMenuBtn.addEventListener("click", () => {
-      nav.classList.toggle("show");
-      const icon = mobileMenuBtn.querySelector("i");
-      icon.classList.toggle("fa-bars");
-      icon.classList.toggle("fa-times");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-        nav.classList.remove("show");
-        const icon = mobileMenuBtn.querySelector("i");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-    });
-
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("show");
-        const icon = mobileMenuBtn.querySelector("i");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 30) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
       });
-    });
-  </script>
-  <div class="hero-section">
-    <div class="hero-content">
-      <div class="hero-text-container" data-aos="fade-up">
-        <h1 class="hero-title">
-          <span class="gradient-text">سِنابس</span>
-          <div class="subtitle-wrapper">
-            <span class="subtitle">لبناء مجتمع تقني مبتكِر.. حالِم.. واعِد.</span>
+
+      mobileMenuBtn.addEventListener("click", () => {
+        nav.classList.toggle("show");
+        const icon = mobileMenuBtn.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          nav.classList.remove("show");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("show");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+    </script>
+    <div class="hero-section">
+      <div class="hero-content">
+        <div class="hero-text-container" data-aos="fade-up">
+          <h1 class="hero-title">
+            <span class="gradient-text">سِنابس</span>
+            <div class="subtitle-wrapper">
+              <span class="subtitle"
+                >لبناء مجتمع تقني مبتكِر.. حالِم.. واعِد.</span
+              >
+            </div>
+          </h1>
+          <p class="hero-description">
+            نجمع بين العلم والابتكار لنصنع تغييرًا ايجابيًا في عالم التقنية
+            والذكاء الاصطناعي، ونقود التحول الرقمي نحو آفاق جديدة.
+          </p>
+          <div class="cta-container">
+            <a href="#workshops" class="cta-button primary">
+              <span>أسبوع سِنابس</span>
+              <i class="fas fa-arrow-left"></i>
+            </a>
+            <a href="#about" class="cta-button secondary">
+              <span>تعرف علينا</span>
+              <i class="fas fa-users"></i>
+            </a>
           </div>
-        </h1>
-        <p class="hero-description">
-          نجمع بين العلم والابتكار لنصنع تغييرًا ايجابيًا في عالم التقنية
-           والذكاء الاصطناعي، ونقود التحول الرقمي نحو آفاق جديدة.
-        </p>
-        <div class="cta-container">
-          <a href="#workshops" class="cta-button primary">
-            <span>أسبوع سِنابس</span>
-            <i class="fas fa-arrow-left"></i>
-          </a>
-          <a href="#about" class="cta-button secondary">
-            <span>تعرف علينا</span>
-            <i class="fas fa-users"></i>
-          </a>
+        </div>
+        <div class="hero-visual" data-aos="fade-left">
+          <div class="tech-sphere">
+            <div class="logo-container">
+              <img
+                src="Assets/Synapse_افتار ابيضG-0٦(1).png"
+                alt="سنابس"
+                class="logo"
+              />
+              <div class="logo-shadow"></div>
+            </div>
+            <div class="floating-elements">
+              <div class="float-item ai"><i class="fas fa-brain"></i></div>
+              <div class="float-item data"><i class="fas fa-database"></i></div>
+              <div class="float-item innovation">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div class="float-item tech">
+                <i class="fas fa-microchip"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-visual" data-aos="fade-left">
-        <div class="tech-sphere">
-          <div class="logo-container">
-            <img src="Assets/Synapse_افتار ابيضG-0٦(1).png" alt="سنابس" class="logo" />
-            <div class="logo-shadow"></div>
+      <div class="hero-background">
+        <div class="gradient-orb"></div>
+        <div class="pattern-grid"></div>
+      </div>
+    </div>
+    <div class="bg-pattern"></div>
+
+    <svg
+      class="curveDownColor"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      width="100%"
+      height="100"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+    >
+      <path d="M0 0 C 50 100 80 100 100 0 Z"></path>
+    </svg>
+
+    <section id="about" class="about-section">
+      <div class="about-grid">
+        <!-- Video Side -->
+        <!-- Logo Side -->
+        <div class="logo-side">
+          <div class="logo-About">
+            <img
+              src="Assets/Synapse_G-0٦-removebg-preview.png"
+              alt="شعار سينابس"
+              class="logo-image"
+            />
+            <div class="logo-overlay"></div>
+            <div class="logo-pattern"></div>
+            <!-- Decorative Elements -->
+
+            <div class="corner-shape"></div>
           </div>
-          <div class="floating-elements">
-            <div class="float-item ai"><i class="fas fa-brain"></i></div>
-            <div class="float-item data"><i class="fas fa-database"></i></div>
-            <div class="float-item innovation">
+        </div>
+
+        <!-- Content Side -->
+
+        <div id="about" class="content-side" data-aos="fade-right">
+          <div class="about-title">
+            <span class="title-pill">
+              <span class="title-icon"><i class="fas fa-info-circle"></i></span>
+              من نحن
+            </span>
+          </div>
+          <br />
+          <div class="about-content">
+            <p class="main-text reveal-text">
+              منظمة سِنابس غير الربحية، المتخصصة في مجال البيانات والذكاء
+              الاصطناعي، نؤمن بأن الابتكار هو المحرك الأساسي نحو مستقبل مشرق.
+              تأسست المنظمة في 29 يوليو 2024، برقم ترخيص (1000623900) تحت إشراف
+              الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا).
+            </p>
+            <p class="highlight-text reveal-text">
+              في سِنابس، هدفنا هو تحويل الأفكار الملهمة إلى إنجازات تعزز حياة
+              الأفراد والمجتمعات.
+            </p>
+          </div>
+          <!-- Added Features -->
+          <div class="features-strip" id="services">
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="fas fa-brain"></i>
+              <span>الابتكار</span>
+            </div>
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
               <i class="fas fa-lightbulb"></i>
+              <span>الإبداع</span>
             </div>
-            <div class="float-item tech">
-              <i class="fas fa-microchip"></i>
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-rocket"></i>
+              <span>التطور</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="hero-background">
-      <div class="gradient-orb"></div>
-      <div class="pattern-grid"></div>
-    </div>
-  </div>
-  <div class="bg-pattern"></div>
+    </section>
 
-  <svg class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100"
-    viewBox="0 0 100 100" preserveAspectRatio="none">
-    <path d="M0 0 C 50 100 80 100 100 0 Z"></path>
-  </svg>
+    <svg
+      class="curveUpColor"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      width="100%"
+      height="100"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+    >
+      <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+    </svg>
 
-  <section id="about" class="about-section">
-    <div class="about-grid">
-      <!-- Video Side -->
-      <!-- Logo Side -->
-      <div class="logo-side">
-        <div class="logo-About">
-          <img src="Assets/Synapse_G-0٦-removebg-preview.png" alt="شعار سينابس" class="logo-image" />
-          <div class="logo-overlay"></div>
-          <div class="logo-pattern"></div>
-          <!-- Decorative Elements -->
-
-          <div class="corner-shape"></div>
-        </div>
+    <section class="services-container" id="services">
+      <div class="title-container">
+        <h1 class="workshop-title">خدماتنا</h1>
       </div>
-
-      <!-- Content Side -->
-
-      <div id="about" class="content-side" data-aos="fade-right">
-        <div class="about-title">
-          <span class="title-pill">
-            <span class="title-icon"><i class="fas fa-info-circle"></i></span>
-            من نحن
-          </span>
-        </div>
-        <br />
-        <div class="about-content">
-          <p class="main-text reveal-text">
-            منظمة سِنابس غير الربحية، المتخصصة في مجال البيانات والذكاء الاصطناعي،  نؤمن بأن الابتكار هو المحرك الأساسي
-            نحو مستقبل مشرق. تأسست المنظمة في 29 يوليو 2024، برقم ترخيص (1000623900) تحت إشراف الهيئة السعودية للبيانات
-            والذكاء الاصطناعي (سدايا).
-          </p>
-          <p class="highlight-text reveal-text">
-            في سِنابس، هدفنا هو تحويل الأفكار الملهمة إلى إنجازات تعزز حياة
-            الأفراد والمجتمعات.
+      <div class="services-wrapper">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="service-title">أﻛﺎدﻳﻤﻴﺔ Synapse</h3>
+          <p class="service-description">
+            منصة تعليمية تهدف إلى تمكين الأفراد والمؤسسات بالمعرفة العلمية
+            والعملية في الذكاء الاصطناعي .
           </p>
         </div>
-        <!-- Added Features -->
-        <div class="features-strip" id="services">
-          <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3 class="service-title">اﺑﺘﻜﺎر اﻟﺤﻠﻮل اﻟﺬﻛﻴﺔ</h3>
+          <p class="service-description">
+            خدمات متكاملة لدعم المؤسسات في تحقيق أهدافها باستخدام تقنيات الذكاء
+            الاصطناعي المتقدمة .
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
             <i class="fas fa-brain"></i>
-            <span>الابتكار</span>
           </div>
-          <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
-            <i class="fas fa-lightbulb"></i>
-            <span>الإبداع</span>
-          </div>
-          <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
-            <i class="fas fa-rocket"></i>
-            <span>التطور</span>
-          </div>
+          <h3 class="service-title">اﺳﺘﻘﻄﺎب اﻟﻤﻮاﻫﺐ</h3>
+          <p class="service-description">
+            اﺳﺘﻬﺪاف اﻟﻜﻔﺎءات اﻟﻤﺘﻤﻴﺰة ﻟﺒﻨﺎء ﻣﺠﺘﻤﻊ ﺗﻘﻨﻲ واﻋﻲ .
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+      <section class="workshops-container" id="workshops"></section>
+    </section>
 
-  <svg class="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
-    <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
-</svg>
-
-  <section class="services-container" id="services">
     <div class="title-container">
-      <h1 class="workshop-title">خدماتنا</h1>
+      <h1 class="workshop-title">ورش العمل</h1>
     </div>
-    <div class="services-wrapper">
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-graduation-cap"></i>
-        </div>
-        <h3 class="service-title">أﻛﺎدﻳﻤﻴﺔ Synapse
-        </h3>
-        <p class="service-description">
-           منصة تعليمية تهدف إلى تمكين الأفراد والمؤسسات بالمعرفة العلمية والعملية في الذكاء الاصطناعي .
-        </p>
-      </div>
 
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-robot"></i>
-        </div>
-        <h3 class="service-title">اﺑﺘﻜﺎر اﻟﺤﻠﻮل اﻟﺬﻛﻴﺔ</h3>
-        <p class="service-description">
-          خدمات متكاملة لدعم المؤسسات في تحقيق أهدافها باستخدام تقنيات الذكاء الاصطناعي المتقدمة .
-        </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-brain"></i>
-        </div>
-        <h3 class="service-title">اﺳﺘﻘﻄﺎب اﻟﻤﻮاﻫﺐ</h3>
-        <p class="service-description">
-          اﺳﺘﻬﺪاف اﻟﻜﻔﺎءات اﻟﻤﺘﻤﻴﺰة ﻟﺒﻨﺎء ﻣﺠﺘﻤﻊ ﺗﻘﻨﻲ واﻋﻲ .        </p>
-      </div>
-    </div>
-    <section class="workshops-container" id="workshops"></section>
-  </section>
-
-  <div class="title-container">
-    <h1 class="workshop-title">ورش العمل</h1>
-</div>
-
-<div class="slider-wrapper" id="workshops">
-    <div class="container">
+    <div class="slider-wrapper" id="workshops">
+      <div class="container">
         <div class="slider-track">
-            <!-- Card 1 -->
-            <div class="card">
-                <span class="tag">جدة</span>
-                <h2 class="title-ar"> الذكاء الإصطناعي المتقدم</h2>
-                <h3 class="title-en">Advanced AI</h3>
-                <p class="description">
-                  متخصصون الذكاء الاصطناعي والتكنولوجيا الذين يسعون إلى تعميق خبراتهم من 
-                  خلال مشاريع عملية وتدريب عملي
-                </p>
-                <h3 class="title-en">22/04/2025</h3>
-                <button class="register-btn"><span>التسجيل الآن</span></button>
-            </div>
+          <!-- Card 1 -->
+          <div class="card">
+            <span class="tag">جدة</span>
+            <h2 class="title-ar">الذكاء الإصطناعي المتقدم</h2>
+            <h3 class="title-en">Advanced AI</h3>
+            <p class="description">
+              متخصصون الذكاء الاصطناعي والتكنولوجيا الذين يسعون إلى تعميق
+              خبراتهم من خلال مشاريع عملية وتدريب عملي
+            </p>
+            <h3 class="title-en">22/04/2025</h3>
+            <button class="register-btn"><span>التسجيل الآن</span></button>
+          </div>
 
-            <!-- Card 2 -->
-            <div class="card">
-                <span class="tag">جدة</span>
-                <h2 class="title-ar">الذكاء الإصطناعي و التقنية المالية </h2>
-                <h3 class="title-en"> Fintech</h3>
-                <p class="description">
-                  متخصصون طلاب المالية والمحاسبة المهتمون بتطبيق الذكاء الاصطناعي في المهام اليومية أو التحولات المهنية
-                </p>
-                <h3 class="title-en">23/04/2025</h3>
-                <button class="register-btn"><span>التسجيل الآن</span></button>
-            </div>
+          <!-- Card 2 -->
+          <div class="card">
+            <span class="tag">جدة</span>
+            <h2 class="title-ar">الذكاء الإصطناعي و التقنية المالية</h2>
+            <h3 class="title-en">Fintech</h3>
+            <p class="description">
+              متخصصون طلاب المالية والمحاسبة المهتمون بتطبيق الذكاء الاصطناعي في
+              المهام اليومية أو التحولات المهنية
+            </p>
+            <h3 class="title-en">23/04/2025</h3>
+            <button class="register-btn"><span>التسجيل الآن</span></button>
+          </div>
 
-            <!-- Card 3 -->
-            <div class="card">
-                <span class="tag">جدة</span>
-                <h2 class="title-ar">الذكاء الإصطناعي و الاعمال</h2>
-                <h3 class="title-en">Business Intelligence & Tourism</h3>
-                <p class="description">
-                  متخصصون الأعمال والطلاب الذين يتطلعون إلى تحسين جودة سير العمل وأتمتة العمليات باستخدام الذكاء الاصطناعي وأدوات البيانات
-                </p>
-                <h3 class="title-en">24/04/2025</h3>
-                <button class="register-btn"><span>التسجيل الآن</span></button>
-            </div>
+          <!-- Card 3 -->
+          <div class="card">
+            <span class="tag">جدة</span>
+            <h2 class="title-ar">الذكاء الإصطناعي و الاعمال</h2>
+            <h3 class="title-en">Business Intelligence & Tourism</h3>
+            <p class="description">
+              متخصصون الأعمال والطلاب الذين يتطلعون إلى تحسين جودة سير العمل
+              وأتمتة العمليات باستخدام الذكاء الاصطناعي وأدوات البيانات
+            </p>
+            <h3 class="title-en">24/04/2025</h3>
+            <button class="register-btn"><span>التسجيل الآن</span></button>
+          </div>
 
-            <!-- Card 4 (Hidden Initially) -->
-            <div class="card hidden">
-                <span class="tag">عن بعد</span>
-                <h2 class="title-ar">الذكاء الإصطناعي في الهندسة</h2>
-                <h3 class="title-en">Engineering</h3>
-                <p class="description">
-                   متخصصون الهندسة والطلاب المهتمون باتجاهات الصناعة، وأدوات الذكاء الاصطناعي المُحسّنة، وتحسين سير العمل 
-                </p>
-                <h3 class="title-en">21/04/2025</h3>
-                <button class="register-btn"><span>التسجيل الآن</span></button>
-            </div>
+          <!-- Card 4 (Hidden Initially) -->
+          <div class="card hidden">
+            <span class="tag">عن بعد</span>
+            <h2 class="title-ar">الذكاء الإصطناعي في الهندسة</h2>
+            <h3 class="title-en">Engineering</h3>
+            <p class="description">
+              متخصصون الهندسة والطلاب المهتمون باتجاهات الصناعة، وأدوات الذكاء
+              الاصطناعي المُحسّنة، وتحسين سير العمل
+            </p>
+            <h3 class="title-en">21/04/2025</h3>
+            <button class="register-btn"><span>التسجيل الآن</span></button>
+          </div>
 
-            <!-- Card 5 (Hidden Initially) -->
-            <div class="card hidden">
-                <span class="tag">عن بعد</span>
-                <h2 class="title-ar">الذكاء الإصطناعي في الطب</h2>
-                <h3 class="title-en">Medicine</h3>
-                <p class="description">
-                  متخصصون الرعاية الصحية والطلاب والأطباء الذين يبحثون عن تحديثات وتطبيقات عملية في مجال الذكاء الاصطناعي
-                </p>
-                <h3 class="title-en">20/04/2025</h3>
-                <button class="register-btn"><span>التسجيل الآن</span></button>
-            </div>
+          <!-- Card 5 (Hidden Initially) -->
+          <div class="card hidden">
+            <span class="tag">عن بعد</span>
+            <h2 class="title-ar">الذكاء الإصطناعي في الطب</h2>
+            <h3 class="title-en">Medicine</h3>
+            <p class="description">
+              متخصصون الرعاية الصحية والطلاب والأطباء الذين يبحثون عن تحديثات
+              وتطبيقات عملية في مجال الذكاء الاصطناعي
+            </p>
+            <h3 class="title-en">20/04/2025</h3>
+            <button class="register-btn"><span>التسجيل الآن</span></button>
+          </div>
         </div>
-    </div>
-    
-    <button class="more-workshops-btn">
+      </div>
+
+      <button class="more-workshops-btn">
         <span>انقر للمزيد من ورش العمل</span>
         <div class="arrow"></div>
-    </button>
-</div>
+      </button>
+    </div>
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const moreBtn = document.querySelector('.more-workshops-btn');
-        const hiddenCards = document.querySelectorAll('.card.hidden');
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const moreBtn = document.querySelector(".more-workshops-btn");
+        const hiddenCards = document.querySelectorAll(".card.hidden");
         let isExpanded = false;
 
-        moreBtn.addEventListener('click', function() {
-            if (!isExpanded) {
-                hiddenCards.forEach(card => {
-                    card.classList.remove('hidden');
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                    }, 100);
-                });
-                moreBtn.innerHTML = '<span>عرض أقل</span><div class="arrow" style="transform: rotate(180deg)"></div>';
-            } else {
-                hiddenCards.forEach(card => {
-                    card.style.opacity = '0';
-                    setTimeout(() => {
-                        card.classList.add('hidden');
-                    }, 600);
-                });
-                moreBtn.innerHTML = '<span>انقر للمزيد من ورش العمل</span><div class="arrow"></div>';
-            }
-            isExpanded = !isExpanded;
+        moreBtn.addEventListener("click", function () {
+          if (!isExpanded) {
+            hiddenCards.forEach((card) => {
+              card.classList.remove("hidden");
+              setTimeout(() => {
+                card.style.opacity = "1";
+              }, 100);
+            });
+            moreBtn.innerHTML =
+              '<span>عرض أقل</span><div class="arrow" style="transform: rotate(180deg)"></div>';
+          } else {
+            hiddenCards.forEach((card) => {
+              card.style.opacity = "0";
+              setTimeout(() => {
+                card.classList.add("hidden");
+              }, 600);
+            });
+            moreBtn.innerHTML =
+              '<span>انقر للمزيد من ورش العمل</span><div class="arrow"></div>';
+          }
+          isExpanded = !isExpanded;
         });
-    });
-</script>
+      });
+    </script>
 
-  <!-- Modal -->
-  <div class="modal">
-    <div class="modal-content">
-      <button class="modal-close">×</button>
-      <div class="modal-body">
-        <!-- Content will be dynamically inserted here -->
+    <!-- Modal -->
+    <div class="modal">
+      <div class="modal-content">
+        <button class="modal-close">×</button>
+        <div class="modal-body">
+          <!-- Content will be dynamically inserted here -->
+        </div>
       </div>
     </div>
-  </div>
-  <script>
-  const workshopData = {
-    "الذكاء الإصطناعي المتقدم": {
-      duration: "يوم",
-      fees: "لا يوجد",
-      seats: "30",
-      attendance: "حضوري",
-      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
-      schedule: [
-        { day: "22/04/2025 - الثلاثاء", time: "7:00 - 9:00 مساءً" },
-      ],
-      instructor: {
-        name: "افنان القوقندي",
-        image: "Assets/afnan.jpeg",
-        bio: "مهندسة ذكاء اصطناعي شغوفة بابتكار حلول ذكية تجمع بين الكفاءة والإبداع. خبيرة في تصميم النماذج الذكية وبناء الشراكات التقنية، وتسعى دائمًا لتطوير مهاراتها ومواكبة كل جديد في عالم الذكاء الاصطناعي"
-      }
-    },
-    "الذكاء الإصطناعي و التقنية المالية": {
-      duration: "يوم",
-      fees: "لايوجد",
-      seats: "30",
-      attendance: "حضوري",
-      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
-      schedule: [
-        { day: "23/04/2025 - الأربعاء", time: "7:00 - 9:00 مساءً" },
-      ],
-            instructors: [
-        {
-          name: "Abdullah Bawazeer",
-          image:  "Assets/Dr. Adnan Al-Bar.jpg",
-          bio: `Partner and Founder in<br>
+    <script>
+      const workshopData = {
+        "الذكاء الإصطناعي المتقدم": {
+          duration: "يوم",
+          fees: "لا يوجد",
+          seats: "30",
+          attendance: "حضوري",
+          location: "معمل لاب | Code DAH Lab",
+          locationUrl:
+            "https://maps.app.goo.gl/HUj9Le8Aqy5cwA446?g_st=com.google.maps.preview.copy",
+          link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+          schedule: [
+            { day: "22/04/2025 - الثلاثاء", time: "7:00 - 9:00 مساءً" },
+          ],
+          instructor: {
+            name: "افنان القوقندي",
+            image: "Assets/afnan.jpeg",
+            bio: "مهندسة ذكاء اصطناعي شغوفة بابتكار حلول ذكية تجمع بين الكفاءة والإبداع. خبيرة في تصميم النماذج الذكية وبناء الشراكات التقنية، وتسعى دائمًا لتطوير مهاراتها ومواكبة كل جديد في عالم الذكاء الاصطناعي",
+          },
+        },
+        "الذكاء الإصطناعي و التقنية المالية": {
+          duration: "يوم",
+          fees: "لايوجد",
+          seats: "30",
+          attendance: "حضوري",
+          location: "معمل لاب | Code DAH Lab",
+          locationUrl:
+            "https://maps.app.goo.gl/HUj9Le8Aqy5cwA446?g_st=com.google.maps.preview.copy",
+          link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+          schedule: [
+            { day: "23/04/2025 - الأربعاء", time: "7:00 - 9:00 مساءً" },
+          ],
+          instructors: [
+            {
+              name: "Abdullah Bawazeer",
+              image: "Assets/Dr. Adnan Al-Bar.jpg",
+              bio: `Partner and Founder in<br>
           <li>Ershad Business Consulting for Financial Advisory <br>
           <li>Seen Tarbi for Financial Technology Company<br><br>
 
@@ -393,87 +451,95 @@
       Master’s in Management, USA-OH  
       Bachelor’s in Accounting, KSA-KAU  
       Certified Professional Trainer from IATA  
-      Designing and delivering financial courses`
-        },
-        {
-          name: "Dr. Adnan Al-Bar",
-          image: "Assets/Abdullah Bawazeer.jpg", // استخدم مسار صحيح للصورة
-          bio: ` <li>CEO of Seen Tarbi for Financial Technology Company
+      Designing and delivering financial courses`,
+            },
+            {
+              name: "Dr. Adnan Al-Bar",
+              image: "Assets/Abdullah Bawazeer.jpg", // استخدم مسار صحيح للصورة
+              bio: ` <li>CEO of Seen Tarbi for Financial Technology Company
 
       <li>Head of the Advisory Office for Digital Business Solutions  
-      <li>Digital Transformation and Emerging Technologies Consultant`
-        }
-      ]
-    },
+      <li>Digital Transformation and Emerging Technologies Consultant`,
+            },
+          ],
+        },
 
+        "الذكاء الإصطناعي و الاعمال": {
+          duration: "يوم",
+          fees: "لايوجد",
+          seats: "30",
+          attendance: "حضوري",
+          location: "معمل لاب | Code DAH Lab",
+          locationUrl:
+            "https://maps.app.goo.gl/HUj9Le8Aqy5cwA446?g_st=com.google.maps.preview.copy",
+          link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+          schedule: [{ day: "24/04/2025 - الخميس", time: "7:00 - 9:00 مساءً" }],
+          instructor: {
+            name: "لينا بابصيل",
+            image: "Assets/lina.jpeg",
+            bio: "رائدة تنفيذية بخبرة واسعة في قطاع الأغذية والمشروبات، ومتخصصة في تصميم العمليات وتطوير الأعمال. <br> تشغل مناصب قيادية متعددة، وتحمل شهادات معتمدة في الجودة وتجربة العميل، مع خلفية هندسية من جامعة عفت.",
+          },
+        },
+        "الذكاء الإصطناعي في الهندسة": {
+          duration: "يوم",
+          fees: "لايوجد",
+          seats: "30",
+          attendance: "عن بعد",
+          location: "Teams",
+          link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+          schedule: [
+            { day: "21/04/2025 - الإثنين", time: "7:00 - 9:00 مساءً" },
+          ],
+          instructor: {
+            name: "د. محمد باعوم",
+            image:
+              "https://i.pinimg.com/474x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg",
+            bio: "باحث ومستشار متخصص في الذكاء الاصطناعي وتعلم الآلة. حاصل على شهادة الدكتوراه في الهندسة الصناعية وأنظمة المعلومات من جامعة فيرجينيا تك. عمل على مشاريع مبتكرة تشمل تحسين كفاءة الأقسام الطارئة في Mayo Clinic باستخدام الذكاء الاصطناعي، وتطوير نماذج للتنبؤ بالأوبئة، وتحسين أنظمة الطاقة المتجددة باستخدام تقنيات الذكاء الاصطناعي",
+          },
+        },
+        "الذكاء الإصطناعي في الطب": {
+          duration: "يوم",
+          fees: "لايوجد",
+          seats: "30",
+          attendance: "عن بعد",
+          location: "Teams",
+          link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+          schedule: [{ day: "20/04/2025 - الأحد", time: "7:00 - 9:00 مساءً" }],
+          instructor: {
+            name: "د.م. أحمد عزام",
+            image:
+              "https://pbs.twimg.com/profile_images/1882236577566412800/wqB3L66U_400x400.jpg",
+            bio: "طبيب , عالم , و مهندس في الذكاء الاصطناعي | مدير قسم الأبحاث السريرية والذكاء الاصطناعي السريري في ASIDE Healthcare | أستاذ مساعد زائر في جامعة سيول الوطنية",
+          },
+        },
+      };
 
-    "الذكاء الإصطناعي و الاعمال": {
-      duration: "يوم",
-      fees: "لايوجد",
-      seats: "30",
-      attendance: "حضوري",
-      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
-      schedule: [
-        { day: "24/04/2025 - الخميس", time: "7:00 - 9:00 مساءً" },
-      ],
-      instructor: {
-        name: "لينا بابصيل",
-        image: "Assets/lina.jpeg",
-        bio: "رائدة تنفيذية بخبرة واسعة في قطاع الأغذية والمشروبات، ومتخصصة في تصميم العمليات وتطوير الأعمال. <br> تشغل مناصب قيادية متعددة، وتحمل شهادات معتمدة في الجودة وتجربة العميل، مع خلفية هندسية من جامعة عفت."
-      }
-    },
-    "الذكاء الإصطناعي في الهندسة": {
-      duration: "يوم",
-      fees: "لايوجد",
-      seats: "30",
-      attendance: "عن بعد",
-      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
-      schedule: [
-        { day: "21/04/2025 - الإثنين", time: "7:00 - 9:00 مساءً" },
-      ],
-      instructor: {
-          name: "د. محمد باعوم",
-          image: "https://i.pinimg.com/474x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg",
-          bio: "باحث ومستشار متخصص في الذكاء الاصطناعي وتعلم الآلة. حاصل على شهادة الدكتوراه في الهندسة الصناعية وأنظمة المعلومات من جامعة فيرجينيا تك. عمل على مشاريع مبتكرة تشمل تحسين كفاءة الأقسام الطارئة في Mayo Clinic باستخدام الذكاء الاصطناعي، وتطوير نماذج للتنبؤ بالأوبئة، وتحسين أنظمة الطاقة المتجددة باستخدام تقنيات الذكاء الاصطناعي"
-        }
-    },
-    "الذكاء الإصطناعي في الطب": {
-      duration: "يوم",
-      fees: "لايوجد",
-      seats: "30",
-      attendance: "عن بعد",
-      link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
-      schedule: [
-        { day: "20/04/2025 - الأحد", time: "7:00 - 9:00 مساءً" },
-      ],
-      instructor: {
-          name: "د.م. أحمد عزام",
-          image: "https://pbs.twimg.com/profile_images/1882236577566412800/wqB3L66U_400x400.jpg",
-          bio: "طبيب , عالم , و مهندس في الذكاء الاصطناعي | مدير قسم الأبحاث السريرية والذكاء الاصطناعي السريري في ASIDE Healthcare | أستاذ مساعد زائر في جامعة سيول الوطنية"
-        }
-    }
-  };
-  
-  document.querySelectorAll(".register-btn").forEach((btn) => {
-    btn.addEventListener("click", function() {
-      const modal = document.querySelector(".modal");
-      const modalBody = modal.querySelector(".modal-body");
-      const card = this.closest(".card");
-  
-      const title = card.querySelector(".title-ar").textContent.trim();
-      const type = card.querySelector(".tag").textContent;
-      const data = workshopData[title];
-  
-      const scheduleHTML = data.schedule.map(item => `
+      document.querySelectorAll(".register-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const modal = document.querySelector(".modal");
+          const modalBody = modal.querySelector(".modal-body");
+          const card = this.closest(".card");
+
+          const title = card.querySelector(".title-ar").textContent.trim();
+          const type = card.querySelector(".tag").textContent;
+          const data = workshopData[title];
+
+          const scheduleHTML = data.schedule
+            .map(
+              (item) => `
         <li class="schedule-item">
           <span>${item.day}</span>
           <span>${item.time}</span>
         </li>
-      `).join("");
-  
-      // التحقق مما إذا كان هناك مدربان أو مدرب واحد
-      const instructorHTML = data.instructors ? 
-        data.instructors.map(instructor => `
+      `
+            )
+            .join("");
+
+          // التحقق مما إذا كان هناك مدربان أو مدرب واحد
+          const instructorHTML = data.instructors
+            ? data.instructors
+                .map(
+                  (instructor) => `
           <div class="instructor-info">
             <img src="${instructor.image}" alt="${instructor.name}" class="instructor-image">
             <div class="instructor-details">
@@ -481,17 +547,18 @@
               <p>${instructor.bio}</p>
             </div>
           </div>
-        `).join("")
-        :
-        `<div class="instructor-info">
+        `
+                )
+                .join("")
+            : `<div class="instructor-info">
           <img src="${data.instructor.image}" alt="${data.instructor.name}" class="instructor-image">
           <div class="instructor-details">
             <h4>${data.instructor.name}</h4>
             <p>${data.instructor.bio}</p>
           </div>
         </div>`;
-  
-      modalBody.innerHTML = `
+
+          modalBody.innerHTML = `
         <h3 style="color: var(--primary-color); margin-bottom: 1rem;">${type}</h3>
         <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">${title}</h2>
         
@@ -512,7 +579,14 @@
             <div class="detail-label">نوع الحضور</div>
             <div class="detail-value">${data.attendance}</div>
           </div>
-        </div>
+         <div class="detail-item">
+  <div class="detail-label">الموقع</div>
+  <div class="detail-value">
+    <a href="${data.locationUrl}" target="_blank" style="color: var(--primary-color); text-decoration: underline;">
+      ${data.location}
+    </a>
+  </div>
+</div>
   
         <div class="course-schedule">
           <h4 class="schedule-title">مواعيد الدورة</h4>
@@ -528,24 +602,24 @@
   
         <a href="${data.link}" target="_blank" class="register-btn" style="margin-top: 2rem; display: inline-block; text-align: center;">التسجيل</a>
       `;
-  
-      modal.classList.add("show");
-    });
-  });
-  
-  document.querySelector(".modal-close").addEventListener("click", () => {
-    document.querySelector(".modal").classList.remove("show");
-  });
-  
-  document.querySelector(".modal").addEventListener("click", (e) => {
-    if (e.target === document.querySelector(".modal")) {
-      document.querySelector(".modal").classList.remove("show");
-    }
-  });
-  </script>
-  
-<!---------------------------------احصائيات------------------------------------->
-  <!-- <div class="divider-container">
+
+          modal.classList.add("show");
+        });
+      });
+
+      document.querySelector(".modal-close").addEventListener("click", () => {
+        document.querySelector(".modal").classList.remove("show");
+      });
+
+      document.querySelector(".modal").addEventListener("click", (e) => {
+        if (e.target === document.querySelector(".modal")) {
+          document.querySelector(".modal").classList.remove("show");
+        }
+      });
+    </script>
+
+    <!---------------------------------احصائيات------------------------------------->
+    <!-- <div class="divider-container">
     <div class="gradient-banner"></div>
     <div class="particles"></div>
     <div class="wave"></div>
@@ -598,141 +672,150 @@
 
   </div> -->
 
-  <script>
-    // Create floating particles
-    const particles = document.querySelector(".particles");
-    for (let i = 0; i < 50; i++) {
-      const particle = document.createElement("div");
-      particle.classList.add("particle");
-      particle.style.width = Math.random() * 10 + "px";
-      particle.style.height = particle.style.width;
-      particle.style.left = Math.random() * 100 + "%";
-      particle.style.top = Math.random() * 100 + "%";
-      particle.style.animationDuration = Math.random() * 2 + 2 + "s";
-      particle.style.animationDelay = Math.random() * 2 + "s";
-      particles.appendChild(particle);
-    }
+    <script>
+      // Create floating particles
+      const particles = document.querySelector(".particles");
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+        particle.style.width = Math.random() * 10 + "px";
+        particle.style.height = particle.style.width;
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.top = Math.random() * 100 + "%";
+        particle.style.animationDuration = Math.random() * 2 + 2 + "s";
+        particle.style.animationDelay = Math.random() * 2 + "s";
+        particles.appendChild(particle);
+      }
 
-    // Counter animation
-    const counters = document.querySelectorAll(".count");
-    const speed = 200;
+      // Counter animation
+      const counters = document.querySelectorAll(".count");
+      const speed = 200;
 
-    const animateCounter = (counter) => {
-      const target = +counter.getAttribute("data-target");
-      let count = 0;
-      const increment = target / speed;
+      const animateCounter = (counter) => {
+        const target = +counter.getAttribute("data-target");
+        let count = 0;
+        const increment = target / speed;
 
-      const updateCount = () => {
-        if (count < target) {
-          count += increment;
-          counter.innerText = Math.ceil(count);
-          setTimeout(updateCount, 1);
-        } else {
-          counter.innerText = target;
-        }
+        const updateCount = () => {
+          if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count);
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCount();
       };
 
-      updateCount();
-    };
+      // Intersection Observer for counter animation
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
 
-    // Intersection Observer for counter animation
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
+      counters.forEach((counter) => observer.observe(counter));
+    </script>
 
-    counters.forEach((counter) => observer.observe(counter));
-  </script>
-
-  <footer class="footer">
-    <div class="footer-particles" id="particles"></div>
-    <div class="footer-container">
-      <div class="footer-grid">
-        <div class="footer-section">
-          <h2 class="footer-title">تواصل معنا</h2>
-          <div class="contact-card">
-            <div class="contact-content">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <a href="mailto:SynapseAdmin@synapseksa.com" style="text-decoration: none;">
-                <div class="contact-info">
-                  <h3>تواصل معنا</h3>
-                  <p>SynapseAdmin@synapseksa.com</p>
+    <footer class="footer">
+      <div class="footer-particles" id="particles"></div>
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h2 class="footer-title">تواصل معنا</h2>
+            <div class="contact-card">
+              <div class="contact-content">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
                 </div>
+                <a
+                  href="mailto:SynapseAdmin@synapseksa.com"
+                  style="text-decoration: none"
+                >
+                  <div class="contact-info">
+                    <h3>تواصل معنا</h3>
+                    <p>SynapseAdmin@synapseksa.com</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-content">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-info">
+                  <h3>العنوان</h3>
+                  <p>جدة,المملكة العربية السعودية</p>
+                </div>
+              </div>
+            </div>
+            <div class="social-grid">
+              <a
+                href="https://x.com/synapseksa?s=21&t=Ofivr9BCWk8_DYwC7TFv-w"
+                class="social-link"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/synapseksa/posts/?feedView=all"
+                class="social-link"
+              >
+                <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
           </div>
-          <div class="contact-card">
-            <div class="contact-content">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
+
+          <div class="footer-section">
+            <h2 class="footer-title">روابط سريعة</h2>
+            <div class="quick-links">
+              <div class="quick-link">
+                <a href="../Website-/index.html">الرئيسية</a>
               </div>
-              <div class="contact-info">
-                <h3>العنوان</h3>
-                <p>جدة,المملكة العربية السعودية</p>
+              <div class="quick-link">
+                <a href="#about">من نحن</a>
               </div>
-            </div>
-          </div>
-          <div class="social-grid">
-
-            <a href="https://x.com/synapseksa?s=21&t=Ofivr9BCWk8_DYwC7TFv-w" class="social-link">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/synapseksa/posts/?feedView=all" class="social-link">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h2 class="footer-title">روابط سريعة</h2>
-          <div class="quick-links">
-            <div class="quick-link">
-              <a href="../Website-/index.html">الرئيسية</a>
-            </div>
-            <div class="quick-link">
-              <a href="#about">من نحن</a>
-            </div>
-            <div class="quick-link">
-              <a href="#services">خدماتنا</a>
-            </div>
-            <div class="quick-link">
-              <a href="#">المشاريع</a>
-            </div>
-            <div class="quick-link">
-              <a href="#">الأخبار</a>
-            </div>
-            <div class="quick-link">
-              <a href="https://media.licdn.com/dms/document/media/v2/D561FAQGzBMnRSAbfVw/feedshare-document-pdf-analyzed/B56ZTw.DtQGQAk-/0/1739209599648?e=1743033600&v=beta&t=8uEgbToSc1FhXn0Xv7FDvCosTDBnqVYAw2BZ11QPBb0">الملف التعريفي</a>
+              <div class="quick-link">
+                <a href="#services">خدماتنا</a>
+              </div>
+              <div class="quick-link">
+                <a href="#">المشاريع</a>
+              </div>
+              <div class="quick-link">
+                <a href="#">الأخبار</a>
+              </div>
+              <div class="quick-link">
+                <a
+                  href="https://media.licdn.com/dms/document/media/v2/D561FAQGzBMnRSAbfVw/feedshare-document-pdf-analyzed/B56ZTw.DtQGQAk-/0/1739209599648?e=1743033600&v=beta&t=8uEgbToSc1FhXn0Xv7FDvCosTDBnqVYAw2BZ11QPBb0"
+                  >الملف التعريفي</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>جميع الحقوق محفوظة © 2025 Synapse - المملكة العربية السعودية</p>
-    </div>
-  </footer>
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة © 2025 Synapse - المملكة العربية السعودية</p>
+      </div>
+    </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100,
-    });
-  </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+    </script>
 
-  <script src="js/script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
