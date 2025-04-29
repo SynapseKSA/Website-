@@ -1,0 +1,409 @@
+:root {
+    /* Your provided CSS variables remain the same */
+    --primary-blue: #01acd3;
+    --secondary-sage: #7a8f78;
+    --accent-teal: #3b9b9f;
+    --accent-brown: #b17f5c;
+    --text-primary: #303030;
+    --text-secondary: #4a5568;
+    --text-light: #f8fafc;
+    --text-muted: #64748b;
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f5f9;
+    --bg-card: rgba(255, 255, 255, 0.9);
+    --gradient-primary: linear-gradient(135deg, #01acd3, #3b9b9f, #7a8f78, #b17f5c);
+    --gradient-secondary: linear-gradient(135deg, #b17f5c, #7a8f78, #3b9b9f, #01acd3);
+    --gradient-hover: linear-gradient(135deg, #3b9b9f, #01acd3, #7a8f78);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-shadow: 0 8px 32px 0 rgba(1, 172, 211, 0.1);
+    --blur-effect: blur(10px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Background Animation */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    animation: float 15s infinite;
+}
+
+.circle:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: 15%;
+    animation-delay: -5s;
+}
+
+.circle:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    bottom: 10%;
+    left: 20%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(50px, 50px) rotate(90deg);
+    }
+    50% {
+        transform: translate(0, 100px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-50px, 50px) rotate(270deg);
+    }
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+/* Header Styles */
+.meetings-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.meetings-header h1 {
+    font-size: 3rem;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.meetings-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 60%;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 999px;
+}
+
+.meetings-header p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Filter Section */
+.meetings-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Grid Layout */
+.meetings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Card Styles */
+.meeting-card {
+    background: var(--glass-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: var(--blur-effect);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.meeting-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.meeting-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.meeting-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.meeting-card:hover .meeting-image {
+    transform: scale(1.1);
+}
+
+.meeting-date-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.meeting-content {
+    padding: 1.5rem;
+}
+
+.meeting-category {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meeting-category i {
+    font-size: 0.9rem;
+}
+
+.meeting-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+
+.meeting-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.meeting-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.meeting-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meeting-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.view-button, .download-button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.view-button {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.download-button {
+    background: transparent;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.view-button:hover, .download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
+.page-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-button.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .meetings-header h1 {
+        font-size: 2rem;
+    }
+
+    .meetings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .meeting-actions {
+        flex-direction: column;
+    }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.loading {
+    animation: shimmer 1s linear infinite;
+    background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+    background-size: 800px 104px;
+}
+.welcome-top {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 10px 20px;
+    border-bottom: 4px solid #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .welcome-container {
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .welcome-text {
+    flex: 1 1 60%;
+    text-align: right;
+  }
+  
+  .welcome-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-text p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .welcome-logo {
+    flex: 1 1 30%;
+    text-align: left;
+  }
+  
+  .welcome-logo {
+    flex: 0 0 auto;
+    text-align: right;
+  }
+  
+  .welcome-logo img {
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+    display: block;
+    margin-right: 0; /* تأكيد عدم وجود فراغ */
+  }
+  
+  
+  .welcome-logo img:hover {
+    transform: scale(1.08) rotate(-3deg);
+    filter: drop-shadow(4px 4px 15px rgba(0, 0, 0, 0.4));
+  }
+    
+  
