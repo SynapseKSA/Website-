@@ -345,3 +345,65 @@ body {
     background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
     background-size: 800px 104px;
 }
+.welcome-top {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 10px 20px;
+    border-bottom: 4px solid #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .welcome-container {
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .welcome-text {
+    flex: 1 1 60%;
+    text-align: right;
+  }
+  
+  .welcome-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-text p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .welcome-logo {
+    flex: 1 1 30%;
+    text-align: left;
+  }
+  
+  .welcome-logo {
+    flex: 0 0 auto;
+    text-align: right;
+  }
+  
+  .welcome-logo img {
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+    display: block;
+    margin-right: 0; /* تأكيد عدم وجود فراغ */
+  }
+  
+  
+  .welcome-logo img:hover {
+    transform: scale(1.08) rotate(-3deg);
+    filter: drop-shadow(4px 4px 15px rgba(0, 0, 0, 0.4));
+  }
+    
+  
