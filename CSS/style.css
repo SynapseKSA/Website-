@@ -1600,37 +1600,7 @@ nav {
     width: 100%;
   }
 }
-:root {
-  --primary-blue: #01acd3;
-  --secondary-sage: #7a8f78;
-  --accent-teal: #3b9b9f;
-  --accent-brown: #b17f5c;
-  --text-primary: #303030;
-  --text-secondary: #4a5568;
-  --text-light: #f8fafc;
-  --text-muted: #64748b;
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f1f5f9;
-  --bg-card: rgba(255, 255, 255, 0.9);
-  --gradient-primary: linear-gradient(135deg, #01acd3, #3b9b9f, #7a8f78, #b17f5c);
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 8px 32px 0 rgba(1, 172, 211, 0.1);
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Cairo', sans-serif;
-}
-
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  min-height: 100vh;
-}
 
 
 /* Coming Soon Section */
