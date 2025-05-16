@@ -633,7 +633,12 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+
 @media (max-width: 768px) {
+  .container {
+      padding: 1rem;
+  }
+
   .welcome-container {
       flex-direction: column;
       text-align: center;
@@ -660,14 +665,62 @@ body {
       display: none;
   }
 
+  /* Updated Card Responsive Styles */
   .meetings-grid {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 0;
   }
 
   .meeting-card {
-      margin: 0 1rem;
+      margin: 0;
+      width: 100%;
+  }
+
+  .meeting-image-container {
+      height: 200px;
+  }
+
+  .meeting-content {
+      padding: 1.5rem;
+  }
+
+  .meeting-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+  }
+
+  .meeting-description {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+  }
+
+  .meeting-meta {
+      flex-direction: row;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+  }
+
+  .meeting-meta span {
+      font-size: 0.85rem;
+  }
+
+  .meeting-actions {
+      flex-direction: column;
+  }
+
+  .view-button {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 44px;
   }
 }
+
+
 :root {
     --color-primary: #01acd3;
     --color-secondary: #01acd3;
