@@ -1600,6 +1600,101 @@ nav {
     width: 100%;
   }
 }
+:root {
+  --primary-blue: #01acd3;
+  --secondary-sage: #7a8f78;
+  --accent-teal: #3b9b9f;
+  --accent-brown: #b17f5c;
+  --text-primary: #303030;
+  --text-secondary: #4a5568;
+  --text-light: #f8fafc;
+  --text-muted: #64748b;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --gradient-primary: linear-gradient(135deg, #01acd3, #3b9b9f, #7a8f78, #b17f5c);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: 0 8px 32px 0 rgba(1, 172, 211, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+
+/* Coming Soon Section */
+.coming-soon {
+  text-align: center;
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+.coming-soon-title {
+  color: var(--accent-brown);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.coming-soon-card {
+  background: white;
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.coming-soon-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.coming-soon-description {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal));
+  color: white;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(1, 172, 211, 0.4);
+  }
+  70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 10px rgba(1, 172, 211, 0);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(1, 172, 211, 0);
+  }
+}
+
 
 :root {
   --color-primary: #01acd3;
