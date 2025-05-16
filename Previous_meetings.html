@@ -63,68 +63,52 @@
                 </ul>
               </nav>
               
-              <script>
-              document.addEventListener('DOMContentLoaded', function() {
-                  if (window.location.hash) {
-                      setTimeout(function() {
-                          const targetElement = document.querySelector(window.location.hash);
-                          if (targetElement) {
-                              targetElement.scrollIntoView({ behavior: 'smooth' });
-                          }
-                      }, 100);
-                  }
-              
-                  document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-                      anchor.addEventListener('click', function (e) {
-                          const href = this.getAttribute('href');
-                          if (href.includes('index.html#')) {
-                              const targetId = href.split('#')[1];
-                              const targetElement = document.getElementById(targetId);
-                              if (targetElement) {
-                                  e.preventDefault();
-                                  targetElement.scrollIntoView({ behavior: 'smooth' });
-                              }
-                          }
-                      });
-                  });
-              });
-              </script>
-              
-              <script>
-              // للانتقال السلس
-              document.addEventListener('DOMContentLoaded', function() {
-                  // التحقق إذا كان هناك هاش في الرابط
-                  if (window.location.hash) {
-                      // الانتظار قليلاً قبل الانتقال
-                      setTimeout(function() {
-                          const targetElement = document.querySelector(window.location.hash);
-                          if (targetElement) {
-                              targetElement.scrollIntoView({ behavior: 'smooth' });
-                          }
-                      }, 100);
-                  }
-              
-                  // إضافة المستمع لكل الروابط التي تحتوي على هاش
-                  document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-                      anchor.addEventListener('click', function (e) {
-                          // التحقق من أن الرابط في نفس الصفحة
-                          if (this.href.includes(window.location.pathname)) {
-                              e.preventDefault();
-                              const targetId = this.getAttribute('href').split('#')[1];
-                              const targetElement = document.getElementById(targetId);
-                              if (targetElement) {
-                                  targetElement.scrollIntoView({ behavior: 'smooth' });
-                              }
-                          }
-                      });
-                  });
-              });
+             
               </script>
               <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
               </button>
             </div>
           </header>
+          
+    <script>
+      const header = document.querySelector("header");
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector("nav");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 30) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      mobileMenuBtn.addEventListener("click", () => {
+        nav.classList.toggle("show");
+        const icon = mobileMenuBtn.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          nav.classList.remove("show");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("show");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        });
+      });
+    </script>
                
 
               <!-- Welcome Section -->
