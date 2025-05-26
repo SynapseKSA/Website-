@@ -295,7 +295,7 @@
     </section>
 
     
-        <!-- Coming Soon Section -->
+        <!-- Coming Soon Section 
         <div class="coming-soon" data-aos="fade-up">
           <h1 class="coming-soon-title">ورش العمل</h1>
           <div class="coming-soon-card">
@@ -307,22 +307,213 @@
           </div>
       </div>
   </div>
-<!--
-    <div class="title-container">
+   <div class="title-container">
+      <h1 class="workshop-title">ورش العمل</h1>
+      
+    </div>
+  -->
+
+  
+     <div class="title-container">
       <h1 class="workshop-title">ورش العمل</h1>
       
     </div>
 
+    <!--اذا عندنا ورشة عمل وحده الرجاء اضافة هذا الكود-->
+    
+
+
+         <div class="ai-camp-wrapper">
+    
+        <div class="ai-camp-card">
+            <div class="ai-camp-media">
+                <img src="https://i.pinimg.com/736x/72/d6/6a/72d66aa60dd2a011416822753faf43b2.jpg" alt="معسكر الذكاء الاصطناعي للأطفال">
+                <div class="ai-camp-decorations">
+                    <div class="ai-camp-decoration-dot" data-speed="2"></div>
+                    <div class="ai-camp-decoration-dot" data-speed="1.5"></div>
+                    <div class="ai-camp-decoration-dot" data-speed="3"></div>
+                </div>
+            </div>
+            <div class="ai-camp-content">
+                <h1 class="ai-camp-heading">معسكر الذكاء الاصطناعي للأطفال</h1>
+                <p class="ai-camp-intro">
+                    رحلة ممتعة ومبسطة في عالم الذكاء الاصطناعي مصممة خصيصًا للأطفال!
+                    في هذا المعسكر، نخوض مغامرة تعليمية تفاعلية تجمع بين المعرفة واللعب.
+                </p>
+
+                <ul class="ai-camp-topics">
+                    <li class="ai-camp-topic">
+                        <span class="ai-camp-topic-heading">مقدمة في الذكاء الاصطناعي وأشهر أدواته</span>
+                        <span class="ai-camp-topic-text">يتعرف الطفل على مفاهيم الذكاء الاصطناعي بأسلوب بسيط وتفاعلي يُشعل الفضول ويحفز الإبداع.</span>
+                    </li>
+                    <li class="ai-camp-topic">
+                        <span class="ai-camp-topic-heading">البيانات وعلاقتها بالذكاء الاصطناعي</span>
+                        <span class="ai-camp-topic-text">كيف "تفكر" الآلة؟ يتعلم الأطفال كيف تستخدم الآلة البيانات لاتخاذ قراراتها.</span>
+                    </li>
+                    <li class="ai-camp-topic">
+                        <span class="ai-camp-topic-heading">مقدمة في تعلم الآلة</span>
+                        <span class="ai-camp-topic-text">كيف تتعلم الآلات من التجربة؟ نوضح ذلك من خلال أنشطة وتجارب شيقة.</span>
+                    </li>
+                    <li class="ai-camp-topic">
+                        <span class="ai-camp-topic-heading">أنشطة وألعاب ترفيهية تعليمية</span>
+                        <span class="ai-camp-topic-text">ندمج التعليم بالمرح لتجربة تعليمية لا تُنسى تُحفّز حب الاستكشاف والتعلم.</span>
+                    </li>
+                </ul>
+
+                <button class="ai-camp-cta">
+                    <span>للتفاصيل</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تحسين تأثيرات العناصر العائمة
+        const decorationDots = document.querySelectorAll('.ai-camp-decoration-dot');
+        decorationDots.forEach((dot, index) => {
+            const speed = dot.getAttribute('data-speed');
+            const delay = index * 0.2;
+            let position = delay * Math.PI;
+
+            function floatAnimation() {
+                position += speed * 0.02;
+                const yPos = Math.sin(position) * 20;
+                const xPos = Math.cos(position) * 10;
+                dot.style.transform = `translate(${xPos}px, ${yPos}px)`;
+                requestAnimationFrame(floatAnimation);
+            }
+
+            floatAnimation();
+        });
+
+        // تحسين تأثيرات زر التسجيل
+        const ctaButton = document.querySelector('.ai-camp-cta');
+        ctaButton.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            for (let i = 0; i < 20; i++) {
+                createSparkle(x + rect.left, y + rect.top);
+            }
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'ai-camp-sparkle';
+            document.body.appendChild(sparkle);
+
+            const destinationX = (Math.random() - 0.5) * 200;
+            const destinationY = (Math.random() - 0.5) * 200;
+            const rotation = Math.random() * 520;
+
+            sparkle.style.setProperty('--destX', `${destinationX}px`);
+            sparkle.style.setProperty('--destY', `${destinationY}px`);
+            sparkle.style.setProperty('--rot', `${rotation}deg`);
+
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        }
+
+        // تحسين تأثير ظهور العناصر
+        const observerAi = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        document.querySelectorAll('.ai-camp-topic').forEach(topic => {
+           observerAi.observe(topic);
+        });
+    </script>
+    <script>
+        // تحسين تأثيرات العناصر العائمة
+        const floatItems = document.querySelectorAll('.float-item');
+        floatItems.forEach((item, index) => {
+            const speed = item.getAttribute('data-speed');
+            const delay = index * 0.2;
+            let position = delay * Math.PI;
+
+            function floatAnimation() {
+                position += speed * 0.02;
+                const yPos = Math.sin(position) * 20;
+                const xPos = Math.cos(position) * 10;
+                item.style.transform = `translate(${xPos}px, ${yPos}px)`;
+                requestAnimationFrame(floatAnimation);
+            }
+
+            floatAnimation();
+        });
+
+        // تحسين تأثيرات زر التسجيل
+        const registerBtn = document.querySelector('.register-btn');
+        registerBtn.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            for (let i = 0; i < 20; i++) {
+                createParticle(x + rect.left, y + rect.top);
+            }
+        });
+
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            document.body.appendChild(particle);
+
+            const destinationX = (Math.random() - 0.5) * 200;
+            const destinationY = (Math.random() - 0.5) * 200;
+            const rotation = Math.random() * 520;
+
+            particle.style.setProperty('--destX', `${destinationX}px`);
+            particle.style.setProperty('--destY', `${destinationY}px`);
+            particle.style.setProperty('--rot', `${rotation}deg`);
+
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
+
+            setTimeout(() => {
+                particle.remove();
+            }, 1000);
+        }
+
+        
+        document.querySelectorAll('.feature-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+
+
+ <!--
     <div class="slider-wrapper" id="workshops">
       <div class="container">
         <div class="slider-track">
           <div class="card">
             <span class="tag">جدة</span>
-            <h2 class="title-ar">الذكاء الإصطناعي المتقدم</h2>
-            <h3 class="title-en">Advanced AI</h3>
-            <p class="description">
-              متخصصون الذكاء الاصطناعي والتكنولوجيا الذين يسعون إلى تعميق
-              خبراتهم من خلال مشاريع عملية وتدريب عملي
+            <h2 class="title-ar">معسكر الذكاء الاصطناعي للأطفال</h2>
+            <h3 class="title-en">AI</h3>
+                      <p class="description">
+          رحلة ممتعة ومبسطة في عالم الذكاء الاصطناعي مصممة خصيصًا للأطفال!
+          في هذا المعسكر، نخوض مغامرة تعليمية تفاعلية تجمع بين المعرفة واللعب، حيث يتعلم الأطفال:
+            •	مقدمة في الذكاء الاصطناعي وأشهر أدواته
+          يتعرف الطفل على مفاهيم الذكاء الاصطناعي بأسلوب بسيط وتفاعلي يُشعل الفضول ويحفز الإبداع.
+            •	البيانات وعلاقتها بالذكاء الاصطناعي
+          كيف “تفكر” الآلة؟ يتعلم الأطفال كيف تستخدم الآلة البيانات لاتخاذ قراراتها.
+            •	مقدمة في تعلم الآلة (Machine Learning)
+          كيف تتعلم الآلات من التجربة؟ نوضح ذلك من خلال أنشطة وتجارب شيقة.
+            •	أنشطة وألعاب ترفيهية تعليمية
+          ندمج التعليم بالمرح لتجربة تعليمية لا تُنسى تُحفّز حب الاستكشاف والتعلم.
+
             </p>
             <h3 class="title-en">22/04/2025</h3>
             <button class="register-btn"><span>انتهى التسجيل</span></button>
@@ -376,12 +567,17 @@
             <button class="register-btn"><span>انتهى التسجيل</span></button>
           </div>
         </div>
+     
       </div>
-
+          -->
+<!--
       <button class="more-workshops-btn">
         <span>انقر للمزيد من ورش العمل</span>
         <div class="arrow"></div>
       </button>
+
+     
+     
     </div>
 
     <script>
@@ -422,29 +618,29 @@
         </div>
       </div>
     </div>
-      -->
-
+      
+  -->
     <script>
-      const workshopData = {
-      //   "الذكاء الإصطناعي المتقدم": {
+       //const workshopData = {
+       //  "معسكر الذكاء الاصطناعي للأطفال": {
       //     duration: "يوم",
-      //     fees: "لا يوجد",
-      //     seats: "30",
-      //     attendance: "حضوري",
-      //     location: "معمل لاب | Code DAH Lab",
-      //     locationUrl:
-      //       "https://maps.app.goo.gl/HUj9Le8Aqy5cwA446?g_st=com.google.maps.preview.copy",
-      //     certificate: "يوجد",
-      //     link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
-      //     schedule: [
-      //       { day: "22/04/2025 - الثلاثاء", time: "7:00 - 9:00 مساءً" },
-      //     ],
-      //     instructor: {
-      //       name: "افنان القوقندي",
-      //       image: "Assets/afnan.jpeg",
-      //       bio: "مهندسة ذكاء اصطناعي شغوفة بابتكار حلول ذكية تجمع بين الكفاءة والإبداع. خبيرة في تصميم النماذج الذكية وبناء الشراكات التقنية، وتسعى دائمًا لتطوير مهاراتها ومواكبة كل جديد في عالم الذكاء الاصطناعي",
-      //     },
-      //   },
+       //    fees: "لا يوجد",
+       //    seats: "30",
+        //   attendance: "حضوري",
+        //   location: "معمل لاب | Code DAH Lab",
+        //   locationUrl:
+        //     "https://maps.app.goo.gl/HUj9Le8Aqy5cwA446?g_st=com.google.maps.preview.copy",
+        //   certificate: "يوجد",
+        //  link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+        //   schedule: [
+          //   { day: "22/04/2025 - الثلاثاء", time: "7:00 - 9:00 مساءً" },
+         //  ],
+         //  instructor: {
+          //   name: "افنان القوقندي",
+         //   image: "Assets/afnan.jpeg",
+         //   bio: "مهندسة ذكاء اصطناعي شغوفة بابتكار حلول ذكية تجمع بين الكفاءة والإبداع. خبيرة في تصميم النماذج الذكية وبناء الشراكات التقنية، وتسعى دائمًا لتطوير مهاراتها ومواكبة كل جديد في عالم الذكاء الاصطناعي",
+      //    },
+       //  },
       //   "الذكاء الإصطناعي و التقنية المالية": {
       //     duration: "يوم",
       //     fees: "لايوجد",
@@ -535,7 +731,7 @@
       //       bio: "طبيب , عالم , و مهندس في الذكاء الاصطناعي | مدير قسم الأبحاث السريرية والذكاء الاصطناعي السريري في ASIDE Healthcare | أستاذ مساعد زائر في جامعة سيول الوطنية",
       //     },
       //   },
-      };
+   //   };
 
       document.querySelectorAll(".register-btn").forEach((btn) => {
         btn.addEventListener("click", function () {
