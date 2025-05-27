@@ -80,6 +80,24 @@
             left: -150px;
             animation: float 8s ease-in-out infinite reverse;
         }
+         ::selection {
+        color: inherit;
+        background: rgba(1, 172, 211, 0.2);
+    }
+
+    ::-moz-selection {
+        color: inherit;
+        background: rgba(1, 172, 211, 0.2);
+    }
+
+    *::before,
+    *::after {
+        content: none !important;
+    }
+
+    * {
+        quotes: none !important;
+    }
 
         .card-container {
             width: 100%;
@@ -381,101 +399,101 @@
         }
 
 
-        .intro-text {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    padding: 0 1rem;
-} 
-.trainer-section {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--glass-border);
-}
+                .intro-text {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            padding: 0 1rem;
+        } 
+        .trainer-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+        }
 
-.section-title {
-    text-align: center;
-    font-size: 1.8rem;
-    color: var(--text-primary);
-    margin-bottom: 2rem;
-}
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
 
-.trainer-card {
-    display: flex;
-    gap: 2rem;
-    background: var(--glass-bg);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    border: 1px solid var(--glass-border);
-    position: relative;
-    overflow: hidden;
-}
+        .trainer-card {
+            display: flex;
+            gap: 2rem;
+            background: var(--glass-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
 
-.trainer-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-start);
-    opacity: 0.05;
-}
+        .trainer-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-start);
+            opacity: 0.05;
+        }
 
-.trainer-image {
-    flex-shrink: 0;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    position: relative;
-}
+        .trainer-image {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+        }
 
-.trainer-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .trainer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.trainer-info {
-    flex: 1;
-}
+        .trainer-info {
+            flex: 1;
+        }
 
-.trainer-name {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
+        .trainer-name {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
 
-.trainer-title {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
+        .trainer-title {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
 
-.trainer-bio {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
+        .trainer-bio {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
 
-.trainer-stats {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
+        .trainer-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
 
-.stat-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text-primary);
-}
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+        }
 
-.stat-item i {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-}
+        .stat-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
 
 /* إضافة Media Queries للتجاوب */
 @media (max-width: 768px) {
