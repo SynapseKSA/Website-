@@ -181,7 +181,7 @@
 
 
             <!-- Meeting Card 3 -->
-             <!-- Meeting Card 1 -->
+           
              <div class="meeting-card" data-aos="fade-up">
                 <div class="meeting-image-container">
                     <span class="meeting-date-badge">24 ابريل</span>
@@ -206,18 +206,72 @@
                 </div>
             </div>
 
+              <!-- Meeting Card 4 -->
+             <div class="meeting-card" data-aos="fade-up">
+                <div class="meeting-image-container">
+                    <span class="meeting-date-badge">24 ابريل</span>
+                    <img src="./Assets/DSC0015.JPG" alt="لقاء فبراير 2025" class="meeting-image">
+                </div>
+                <div class="meeting-content">
+                    <div class="meeting-category">
+                        <i class="fas fa-book-reader"></i>
+                        الذكاء الاصطناعي  والاعمال
+                    </div>
+                    <h3 class="meeting-title">لقاء   الذكاء الاصطناعي  والاعمال</h3>
+                    <p class="meeting-description">أُقيمت ورشة عمل بعنوان "الذكاء الاصطناعي والأعمال"
+                        وشهدت مشاركة لينا بابصيل، حيث ناقشت خلالها دور الذكاء الاصطناعي في تطوير الأعمال
+                        </p>
+                    <div class="meeting-meta">
+                        <span><i class="fas fa-clock"></i> ساعتان</span>
+                        <span><i class="fas fa-users"></i> 150 مشاهدة</span>
+                    </div>
+                    <div class="meeting-actions">
+                        <a href="#" class="view-button">مشاهدة اللقاء</a>
+                    </div>
+                </div>
+            </div>
+
+  <!-- Meeting Card 5 -->
+            
+             <div class="meeting-card" data-aos="fade-up">
+                <div class="meeting-image-container">
+                    <span class="meeting-date-badge">24 ابريل</span>
+                    <img src="./Assets/DSC0015.JPG" alt="لقاء فبراير 2025" class="meeting-image">
+                </div>
+                <div class="meeting-content">
+                    <div class="meeting-category">
+                        <i class="fas fa-book-reader"></i>
+                        الذكاء الاصطناعي  والاعمال
+                    </div>
+                    <h3 class="meeting-title">لقاء   الذكاء الاصطناعي  والاعمال</h3>
+                    <p class="meeting-description">أُقيمت ورشة عمل بعنوان "الذكاء الاصطناعي والأعمال"
+                        وشهدت مشاركة لينا بابصيل، حيث ناقشت خلالها دور الذكاء الاصطناعي في تطوير الأعمال
+                        </p>
+                    <div class="meeting-meta">
+                        <span><i class="fas fa-clock"></i> ساعتان</span>
+                        <span><i class="fas fa-users"></i> 150 مشاهدة</span>
+                    </div>
+                    <div class="meeting-actions">
+                        <a href="#" class="view-button">مشاهدة اللقاء</a>
+                    </div>
+                </div>
+            </div>
 
             <!-- Add more meeting cards here -->
         </div>
-
-        <!-- Pagination 
-        <div class="pagination" data-aos="fade-up">
+  
+        <!-- <div class="pagination" data-aos="fade-up">
             <button class="page-button active">1</button>
             <button class="page-button">2</button>
-            <button class="page-button">3</button>
-            <button class="page-button">4</button>
-        </div>
-        -->
+             <button class="page-button">3</button>
+            <button class="page-button">4</button> -->
+        <!-- </div> --> 
+       
+     <div class="pagination" data-aos="fade-up">
+  <button id="btn1" class="page-button">1</button>
+  <button id="btn2" class="page-button">2</button>
+</div>
+
     </div>
     <footer class="footer">
         <div class="footer-particles" id="particles"></div>
@@ -314,13 +368,45 @@
         });
 
         // Pagination functionality
-        const pageButtons = document.querySelectorAll('.page-button');
-        pageButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                pageButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-            });
-        });
+        // const pageButtons = document.querySelectorAll('.page-button');
+        // pageButtons.forEach(button => {
+        //     button.addEventListener('click', () => {
+        //         pageButtons.forEach(btn => btn.classList.remove('active'));
+        //         button.classList.add('active');
+        //     });
+        // });
+
+        
+  const cards = document.querySelectorAll('.meeting-card');
+  const btn1 = document.getElementById('btn1');
+  const btn2 = document.getElementById('btn2');
+
+  function showRange(start, end) {
+    cards.forEach((card, index) => {
+      card.classList.remove('show');
+      if (index >= start && index <= end) {
+        card.classList.add('show');
+      }
+    });
+  }
+
+  btn1.addEventListener('click', () => {
+    showRange(0, 2); // عرض أول 3
+    btn1.classList.add('active');
+    btn2.classList.remove('active');
+  });
+
+  btn2.addEventListener('click', () => {
+    showRange(3, 4); // عرض آخر 2
+    btn2.classList.add('active');
+    btn1.classList.remove('active');
+  });
+
+  // عرض افتراضي لأول 3 كروت
+  showRange(0, 2);
+  btn1.classList.add('active');
+
+
     </script>
 </body>
 </html>
