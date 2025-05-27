@@ -203,24 +203,6 @@
     </div>
 </div>
 
-<script>
-    document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-            const faqItem = question.parentElement;
-            const isActive = faqItem.classList.contains('active');
-            
-            // Close all other FAQs
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Toggle current FAQ
-            if (!isActive) {
-                faqItem.classList.add('active');
-            }
-        });
-    });
-</script>
 </div>
 <script>
 document.addEventListener('mousemove', (e) => {
@@ -384,6 +366,49 @@ const animateOnScroll = () => {
 };
 
 window.addEventListener('load', animateOnScroll);
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.classList.remove('active');
+    });
+
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            
+            faqItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            faqItem.classList.toggle('active');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.faq-item')) {
+            faqItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth <= 768) {
+                faqItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+        }, 250);
+    });
+});
 </script>
  
 
