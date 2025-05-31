@@ -73,10 +73,12 @@
                         عرض الموقع على الخريطة
                     </a>
                 </div>
-                <button class="register-btn">
-                    <span>سجل الآن</span>
+               <button class="register-btn" >
+                    <a href="https://forms.office.com/r/wLzMv9Eu8x" target="_blank"  >سجل الآن</a>
                     <i class="ri-arrow-left-line"></i>
                 </button>
+
+
             </div>
                         </div>
 
@@ -248,7 +250,7 @@ document.querySelectorAll('.counter, .animate__animated').forEach(el => {
 });
 
 document.querySelector('.register-btn').addEventListener('click', (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const targetSection = document.querySelector('#registration');
     if (targetSection) {
         targetSection.scrollIntoView({ behavior: 'smooth' });

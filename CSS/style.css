@@ -1602,8 +1602,6 @@ nav {
 }
 /* end of about us */
 
-
-
 /* Coming Soon Section 
 .coming-soon {
   text-align: center;
@@ -1673,7 +1671,6 @@ nav {
   --color-accent: #3b9b9f;
   --color-gradient: linear-gradient(135deg, #b17f5c, #01acd3);
 }
-
 
 .footer {
   width: 100%;
@@ -2390,297 +2387,323 @@ nav {
   --text-primary: #b17f5c;
   --text-secondary: #191919;
   --card-bg: rgba(255, 255, 255, 0.9);
-   --bg-color: #f8fafc;
-            --card-bg: rgba(255, 255, 255, 0.95);
-            --border-radius: 24px;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --shadow-color: rgba(59, 155, 159, 0.2);
-  
-
+  --bg-color: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --border-radius: 24px;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-color: rgba(59, 155, 159, 0.2);
 }
 
-
-      
-
-      
 @keyframes cardGradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes cardFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(2deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
 }
 
 @keyframes cardShine {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
 }
 
 @keyframes cardPulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.1); opacity: 0.8; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
 }
 
 @keyframes cardSparkle {
-    0% {
-        transform: translate(-50%, -50%) scale(1) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(var(--destX), var(--destY)) scale(0) rotate(var(--rot));
-        opacity: 0;
-    }
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--destX), var(--destY)) scale(0) rotate(var(--rot));
+    opacity: 0;
+  }
 }
-      
 
-        .ai-camp-wrapper {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-            
-        }
+.ai-camp-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
 
-        .ai-camp-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            box-shadow: 0 25px 50px -12px var(--shadow-color);
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            transition: var(--transition);
-            min-height: 600px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            
-        }
+.ai-camp-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: 0 25px 50px -12px var(--shadow-color);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  transition: var(--transition);
+  min-height: 600px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-        .ai-camp-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 35px 60px -15px var(--shadow-color);
-        }
+.ai-camp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 60px -15px var(--shadow-color);
+}
 
-        .ai-camp-media {
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-            min-height: 400px;
-        }
+.ai-camp-media {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
 
-        .ai-camp-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
+.ai-camp-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
 
-        .ai-camp-card:hover .ai-camp-media img {
-            transform: scale(1.05);
-        }
+.ai-camp-card:hover .ai-camp-media img {
+  transform: scale(1.05);
+}
 
-        .ai-camp-decorations {
-            position: absolute;
-            inset: 0;
-            z-index: 3;
-            pointer-events: none;
-        }
+.ai-camp-decorations {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
 
-        .ai-camp-decoration-dot {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            backdrop-filter: blur(5px);
-        }
+.ai-camp-decoration-dot {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+}
 
-        .ai-camp-content {
-            flex: 1.2;
-            padding: 3rem;
-            position: relative;
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.9),
-                rgba(255, 255, 255, 0.8)
-            );
-            display: flex;
-            flex-direction: column;
-            z-index: 1;
-        }
+.ai-camp-content {
+  flex: 1.2;
+  padding: 3rem;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.8)
+  );
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
 
-        .ai-camp-heading {
-            font-size: 2.2rem;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-right: 2rem;
-        }
+.ai-camp-heading {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-right: 2rem;
+}
 
-        .ai-camp-heading::before {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-            border-radius: 3px;
-        }
+.ai-camp-heading::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 3px;
+}
 
-        .ai-camp-intro {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-            position: relative;
-            padding-right: 1.5rem;
-            border-right: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
+.ai-camp-intro {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-right: 1.5rem;
+  border-right: 3px solid transparent;
+  transition: all 0.3s ease;
+}
 
-        .ai-camp-intro:hover {
-            border-right-color: var(--primary-color);
-            transform: translateX(-5px);
-        }
+.ai-camp-intro:hover {
+  border-right-color: var(--primary-color);
+  transform: translateX(-5px);
+}
 
-        .ai-camp-topics {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
-            margin-bottom: 2.5rem;
-            padding-right: 0.5rem;
-        }
+.ai-camp-topics {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  padding-right: 0.5rem;
+}
 
-        .ai-camp-topic {
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(59, 155, 159, 0.1);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            opacity: 0;
-            transform: translateY(20px);
-        }
+.ai-camp-topic {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 155, 159, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
 
-        .ai-camp-topic.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.ai-camp-topic.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-        .ai-camp-topic:hover {
-            transform: translateY(-5px) translateX(-5px);
-            box-shadow: 5px 5px 20px rgba(59, 155, 159, 0.15);
-        }
+.ai-camp-topic:hover {
+  transform: translateY(-5px) translateX(-5px);
+  box-shadow: 5px 5px 20px rgba(59, 155, 159, 0.15);
+}
 
-        .ai-camp-topic-heading {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-            position: relative;
-            z-index: 1;
-        }
+.ai-camp-topic-heading {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
 
-        .ai-camp-topic-text {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 0.95rem;
-            position: relative;
-            z-index: 1;
-        }
+.ai-camp-topic-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
+}
 
-        .ai-camp-cta {
-            margin-top: auto;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border: none;
-            padding: 1.2rem 2.5rem;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
+.ai-camp-cta {
+  margin-top: auto;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
 
-        .ai-camp-cta:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px rgba(59, 155, 159, 0.2);
-        }
+.ai-camp-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px rgba(59, 155, 159, 0.2);
+}
 
-        .ai-camp-cta span {
-            position: relative;
-            z-index: 2;
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
+.ai-camp-cta span {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
 
-        .ai-camp-cta:hover span {
-            transform: scale(1.1);
-        }
+.ai-camp-cta:hover span {
+  transform: scale(1.1);
+}
 
-        .ai-camp-sparkle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: white;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: sparkle 0.6s ease-out forwards;
-        }
+.ai-camp-cta a {
+  color: white;
+  text-decoration: none;
+}
 
-        @media (max-width: 1200px) {
-            .ai-camp-card {
-                flex-direction: column;
-                height: auto;
-            }
+.ai-camp-sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 0.6s ease-out forwards;
+}
 
-            .ai-camp-media {
-                height: 300px;
-            }
+@media (max-width: 1200px) {
+  .ai-camp-card {
+    flex-direction: column;
+    height: auto;
+  }
 
-            .ai-camp-content {
-                padding: 2rem;
-            }
-        }
+  .ai-camp-media {
+    height: 300px;
+  }
 
-        @media (max-width: 768px) {
-            .ai-camp-wrapper {
-                padding: 1rem;
-            }
+  .ai-camp-content {
+    padding: 2rem;
+  }
+}
 
-            .ai-camp-media {
-                height: 250px;
-            }
+@media (max-width: 768px) {
+  .ai-camp-wrapper {
+    padding: 1rem;
+  }
 
-            .ai-camp-heading {
-                font-size: 1.8rem;
-            }
+  .ai-camp-media {
+    height: 250px;
+  }
 
-            .ai-camp-intro {
-                font-size: 1rem;
-            }
+  .ai-camp-heading {
+    font-size: 1.8rem;
+  }
 
-            .ai-camp-topic-heading {
-                font-size: 1rem;
-            }
+  .ai-camp-intro {
+    font-size: 1rem;
+  }
 
-            .ai-camp-topic-text {
-                font-size: 0.9rem;
-            }
+  .ai-camp-topic-heading {
+    font-size: 1rem;
+  }
 
-            .ai-camp-cta {
-                padding: 1rem 2rem;
-                font-size: 1.1rem;
-            }
-        }
+  .ai-camp-topic-text {
+    font-size: 0.9rem;
+  }
+
+  .ai-camp-cta {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+}
 
 /* اذا عندنا اكثر من ورشة استخدمو دا 
 
