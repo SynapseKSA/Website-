@@ -188,4 +188,17 @@ document.querySelectorAll('.ai-camp-topic').forEach(topic => {
 
 
 
+    const cards = document.querySelectorAll('.track-card');
+    
+    const observerbootcamp = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    cards.forEach((card) => {
+        observerbootcamp.observe(card);
+    });
 

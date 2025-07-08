@@ -3055,3 +3055,334 @@ nav {
   }
 }
 */
+
+
+ 
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .page-container {
+            max-width: var(--container-2xl);
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+            position: relative;
+        }
+
+        .header-bootcamp {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+        }
+
+        .main-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            display: inline-block;
+        }
+
+        .main-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+        }
+        
+
+        .tracks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+            gap: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .track-card {
+            background: var(--glass-bg);
+            backdrop-filter: var(--blur-effect);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            transition: var(--transition-normal);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .track-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .track-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--glass-shadow);
+            background: var(--gradient-card);
+        }
+   .age-badges {
+    position: absolute;
+    top: var(--spacing-lg);
+    left: var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-sm);
+    z-index: var(--z-tooltip);
+}
+
+.age-badge {
+    position: static; /* تغيير من absolute إلى static */
+    background: var(--gradient-secondary);
+    color: var(--text-light);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.track-card:hover .age-badge {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+        .track-card:hover .age-badge {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .track-title {
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .track-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .features-list {
+            list-style: none;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .features-list li {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            padding-right: var(--spacing-lg);
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .features-list li::before {
+            content: '•';
+            color: var(--primary-blue);
+            position: absolute;
+            right: 0;
+            font-weight: bold;
+        }
+
+        .track-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-xl);
+            border-top: 1px solid var(--border-medium);
+        }
+
+        .track-date {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .track-price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .location-section {
+            background: var(--gradient-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            text-align: center;
+            color: var(--text-light);
+            margin: var(--spacing-2xl) 0;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+  
+
+        .location-title {
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            z-index: var(--z-normal);
+        }
+
+        .location-text {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            opacity: 0.9;
+            position: relative;
+            z-index: var(--z-normal);
+        }
+
+        .register-button {
+            display: inline-block;
+            background: var(--bg-secondary);
+            color: var(--primary-blue);
+            padding: var(--spacing-lg) var(--spacing-2xl);
+            border-radius: var(--radius-full);
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: var(--spacing-xl);
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: var(--z-normal);
+            overflow: hidden;
+        }
+
+        .register-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-hover);
+            opacity: 0;
+            transition: var(--transition-normal);
+            z-index: -1;
+        }
+
+        .register-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            color: var(--text-light);
+        }
+
+        .register-button:hover::before {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .page-container {
+                padding: var(--spacing-md);
+            }
+
+            .tracks-container {
+                gap: var(--spacing-lg);
+            }
+
+            .track-card {
+                padding: var(--spacing-lg);
+            }
+
+            .track-footer {
+                flex-direction: column;
+                gap: var(--spacing-md);
+                text-align: center;
+            }
+
+            .location-section {
+                padding: var(--spacing-xl);
+            }
+
+            .register-button {
+                padding: var(--spacing-md) var(--spacing-xl);
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .track-card {
+                padding: var(--spacing-md);
+            }
+
+            .age-badge {
+                font-size: 0.8rem;
+                padding: var(--spacing-xs) var(--spacing-md);
+            }
+
+            .track-title {
+                font-size: 1.3rem;
+            }
+
+            .track-description,
+            .features-list li {
+                font-size: 1rem;
+            }
+
+            .track-price {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .tracks-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .background-effect,
+            .location-section::before,
+            .track-card,
+            .register-button,
+            .age-badge {
+                animation: none;
+                transition: none;
+            }
+        }
+    .track-card {
+        
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s ease;
+    }
+
+    .track-card.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .track-card:nth-child(1).show {
+        transition-delay: 0.2s;
+    }
+
+    .track-card:nth-child(2).show {
+        transition-delay: 0.4s;
+    }
+
+    .track-card:nth-child(3).show {
+        transition-delay: 0.6s;
+    }
