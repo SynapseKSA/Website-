@@ -176,6 +176,13 @@
           department: "لجنة التطوير و الابتكار",
           linkedin: "https://www.linkedin.com/in/dhay-alsuwat-09555b1bb/",
         },
+
+         {
+          name: " صالح زهير ",
+          title: "مطوّر مواقع إلكترونية",
+          department: "لجنة التطوير و الابتكار",
+          linkedin: "https://www.linkedin.com/in/saleh-atash?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        },
       
         {
           name: "رائد عصام أبوحجي",
