@@ -269,14 +269,16 @@
    <section class="workshops-container" id="workshops">
    </section>
   </section>
-  <!-- Coming Soon Section 
+
+
   <div class="title-container">
    <h1 class="workshop-title">
     ورش العمل
    </h1>
   </div>
  
- 
+<!-- sunaa -->
+<!--  
   <div class="background-effect"></div>
     
     <div class="page-container">
@@ -342,12 +344,310 @@
             <p class="location-text">مركز التوجيه والتأهيل المهني بجامعة جدة</p>
             <a href="https://forms.office.com/pages/responsepage.aspx?id=G9lTtMFqYUu4uF5l5CIjPwxg3U4OwvVEo8IUA1R0mLlUOUJWSDdXSFAzWThSN1dGSjNRSUxUN0k3Qy4u&route=shorturl" class="register-button">سجل الآن</a>
         </div>
-    </div>
+    </div> -->
  
-     -->
+    <div class="slider-wrapper" id="workshops">
+    <div class="container">
+        <div class="slider-track">
+            <!-- Card 1 -->
+            <div class="card">
+                <span class="tag">عن بعد</span>
+                <h2 class="title-ar">الذكاء الاصطناعي العصبي الرمزي (Neuro-Symbolic AI)</h2>
+                <h3 class="title-en">Advanced AI</h3>
+                <p class="description">
+                    تهدف الورشة إلى استكشاف كيف يجسر الذكاء الاصطناعي العصبي الرمزي الفجوة بين التعلم العصبي القائم على البيانات والمنطق الرمزي القائم على الاستدلال، مما يؤدي إلى إنشاء أنظمة ذكاء اصطناعي أكثر ذكاءً وقابلية للفهم والتفسير.
+                </p>
+                <h3 class="title-en">12/11/2025</h3>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div>
+
+         <!-- Card 2 -->
+            <!-- <div class="card">
+                <span class="tag">جدة</span>
+                <h2 class="title-ar">الذكاء الإصطناعي و التقنية المالية </h2>
+                <h3 class="title-en"> Fintech</h3>
+                <p class="description">
+                  متخصصون طلاب المالية والمحاسبة المهتمون بتطبيق الذكاء الاصطناعي في المهام اليومية أو التحولات المهنية
+                </p>
+                <h3 class="title-en">23/04/2025</h3>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div> -->
+
+            <!-- Card 3 -->
+            <!-- <div class="card">
+                <span class="tag">جدة</span>
+                <h2 class="title-ar">الذكاء الإصطناعي و الاعمال</h2>
+                <h3 class="title-en">Business Intelligence & Tourism</h3>
+                <p class="description">
+                  متخصصون الأعمال والطلاب الذين يتطلعون إلى تحسين جودة سير العمل وأتمتة العمليات باستخدام الذكاء الاصطناعي وأدوات البيانات
+                </p>
+                <h3 class="title-en">24/04/2025</h3>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div> -->
+
+            <!-- Card 4 (Hidden Initially) -->
+            <!-- <div class="card hidden">
+                <span class="tag">عن بعد</span>
+                <h2 class="title-ar">الذكاء الإصطناعي في الهندسة</h2>
+                <h3 class="title-en">Engineering</h3>
+                <p class="description">
+                   متخصصون الهندسة والطلاب المهتمون باتجاهات الصناعة، وأدوات الذكاء الاصطناعي المُحسّنة، وتحسين سير العمل 
+                </p>
+                <h3 class="title-en">21/04/2025</h3>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div> -->
+
+            <!-- Card 5 (Hidden Initially) -->
+            <!-- <div class="card hidden">
+                <span class="tag">عن بعد</span>
+                <h2 class="title-ar">الذكاء الإصطناعي في الطب</h2>
+                <h3 class="title-en">Medicine</h3>
+                <p class="description">
+                  متخصصون الرعاية الصحية والطلاب والأطباء الذين يبحثون عن تحديثات وتطبيقات عملية في مجال الذكاء الاصطناعي
+                </p>
+                <h3 class="title-en">20/04/2025</h3>
+                <button class="register-btn"><span>التسجيل الآن</span></button>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- <button class="more-workshops-btn">
+        <span>انقر للمزيد من ورش العمل</span>
+        <div class="arrow"></div>
+    </button> -->
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const moreBtn = document.querySelector('.more-workshops-btn');
+        const hiddenCards = document.querySelectorAll('.card.hidden');
+        let isExpanded = false;
+
+        moreBtn.addEventListener('click', function() {
+            if (!isExpanded) {
+                hiddenCards.forEach(card => {
+                    card.classList.remove('hidden');
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 100);
+                });
+                moreBtn.innerHTML = '<span>عرض أقل</span><div class="arrow" style="transform: rotate(180deg)"></div>';
+            } else {
+                hiddenCards.forEach(card => {
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.classList.add('hidden');
+                    }, 600);
+                });
+                moreBtn.innerHTML = '<span>انقر للمزيد من ورش العمل</span><div class="arrow"></div>';
+            }
+            isExpanded = !isExpanded;
+        });
+    });
+</script>
+
+  <!-- Modal -->
+  <div class="modal">
+    <div class="modal-content">
+      <button class="modal-close">×</button>
+      <div class="modal-body">
+        <!-- Content will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
+  <script>
+  const workshopData = {
+    "الذكاء الاصطناعي العصبي الرمزي (Neuro-Symbolic AI)": {
+      duration: "ساعتين",
+      fees: "لا يوجد",
+      seats: "200-150",
+      attendance: "عن بعد",
+      link: "https://forms.office.com/r/QB1PHNRDT1", //  رابط التسجيل هنا
+      schedule: [
+        { day: "12/11/2025 - الأربعاء", time: "7:00 - 9:00 مساءً" },
+      ],
+      instructor: {
+        name: "دكتور احمد الامين",
+        image: "https://media.licdn.com/dms/image/v2/D4D03AQFLCHD2-K1mlw/profile-displayphoto-shrink_800_800/B4DZb3ySIbG8Ac-/0/1747913877874?e=1764201600&v=beta&t=SVOq_l68X_TBHsy6FU0EU7SrAYFT_CRq1uyU-uXSTSM",
+        bio:"أستاذ مساعد في الذكاء الاصطناعي وعلوم الحاسب بجامعة جدة، وباحث متخصص في الذكاء الاصطناعي وعلوم الإدراك. تركز أبحاثه على معالجة اللغة الطبيعية والذكاء العصبي الرمزي، مع تطبيقات عملية في النمذجة الإدراكية وأنظمة التوصية الذكية."
+      }
+    },
+    // "الذكاء الإصطناعي و التقنية المالية": {
+    //   duration: "يوم",
+    //   fees: "لايوجد",
+    //   seats: "30",
+    //   attendance: "حضوري",
+    //   link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+    //   schedule: [
+    //     { day: "23/04/2025 - الأربعاء", time: "7:00 - 9:00 مساءً" },
+    //   ],
+    //         instructors: [
+    //     {
+    //       name: "Abdullah Bawazeer",
+    //       image:  "Assets/Dr. Adnan Al-Bar.jpg",
+    //       bio: `Partner and Founder in<br>
+    //       <li>Ershad Business Consulting for Financial Advisory <br>
+    //       <li>Seen Tarbi for Financial Technology Company<br><br>
+
+    //   Over 30 years of experience in the finance field  
+    //   Master’s in Management, USA-OH  
+    //   Bachelor’s in Accounting, KSA-KAU  
+    //   Certified Professional Trainer from IATA  
+    //   Designing and delivering financial courses`
+    //     },
+    //     {
+    //       name: "Dr. Adnan Al-Bar",
+    //       image: "Assets/Abdullah Bawazeer.jpg", // استخدم مسار صحيح للصورة
+    //       bio: ` <li>CEO of Seen Tarbi for Financial Technology Company
+
+    //   <li>Head of the Advisory Office for Digital Business Solutions  
+    //   <li>Digital Transformation and Emerging Technologies Consultant`
+    //     }
+    //   ]
+    // },
+
+
+    // "الذكاء الإصطناعي و الاعمال": {
+    //   duration: "يوم",
+    //   fees: "لايوجد",
+    //   seats: "30",
+    //   attendance: "حضوري",
+    //   link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+    //   schedule: [
+    //     { day: "24/04/2025 - الخميس", time: "7:00 - 9:00 مساءً" },
+    //   ],
+    //   instructor: {
+    //     name: "لينا بابصيل",
+    //     image: "Assets/lina.jpeg",
+    //     bio: "رائدة تنفيذية بخبرة واسعة في قطاع الأغذية والمشروبات، ومتخصصة في تصميم العمليات وتطوير الأعمال. <br> تشغل مناصب قيادية متعددة، وتحمل شهادات معتمدة في الجودة وتجربة العميل، مع خلفية هندسية من جامعة عفت."
+    //   }
+    // },
+    // "الذكاء الإصطناعي في الهندسة": {
+    //   duration: "يوم",
+    //   fees: "لايوجد",
+    //   seats: "30",
+    //   attendance: "عن بعد",
+    //   link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+    //   schedule: [
+    //     { day: "21/04/2025 - الإثنين", time: "7:00 - 9:00 مساءً" },
+    //   ],
+    //   instructor: {
+    //       name: "د. محمد باعوم",
+    //       image: "https://i.pinimg.com/474x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg",
+    //       bio: "باحث ومستشار متخصص في الذكاء الاصطناعي وتعلم الآلة. حاصل على شهادة الدكتوراه في الهندسة الصناعية وأنظمة المعلومات من جامعة فيرجينيا تك. عمل على مشاريع مبتكرة تشمل تحسين كفاءة الأقسام الطارئة في Mayo Clinic باستخدام الذكاء الاصطناعي، وتطوير نماذج للتنبؤ بالأوبئة، وتحسين أنظمة الطاقة المتجددة باستخدام تقنيات الذكاء الاصطناعي"
+    //     }
+    // },
+    // "الذكاء الإصطناعي في الطب": {
+    //   duration: "يوم",
+    //   fees: "لايوجد",
+    //   seats: "30",
+    //   attendance: "عن بعد",
+    //   link: "https://forms.office.com/r/fSyNK9cFpZ", //  رابط التسجيل هنا
+    //   schedule: [
+    //     { day: "20/04/2025 - الأحد", time: "7:00 - 9:00 مساءً" },
+    //   ],
+    //   instructor: {
+    //       name: "د.م. أحمد عزام",
+    //       image: "https://pbs.twimg.com/profile_images/1882236577566412800/wqB3L66U_400x400.jpg",
+    //       bio: "طبيب , عالم , و مهندس في الذكاء الاصطناعي | مدير قسم الأبحاث السريرية والذكاء الاصطناعي السريري في ASIDE Healthcare | أستاذ مساعد زائر في جامعة سيول الوطنية"
+    //     }
+    // }
+  };
+
+  document.querySelectorAll(".register-btn").forEach((btn) => {
+    btn.addEventListener("click", function() {
+      const modal = document.querySelector(".modal");
+      const modalBody = modal.querySelector(".modal-body");
+      const card = this.closest(".card");
+
+      const title = card.querySelector(".title-ar").textContent.trim();
+      const type = card.querySelector(".tag").textContent;
+      const data = workshopData[title];
+
+      const scheduleHTML = data.schedule.map(item => `
+        <li class="schedule-item">
+          <span>${item.day}</span>
+          <span>${item.time}</span>
+        </li>
+      `).join("");
+
+      // التحقق مما إذا كان هناك مدربان أو مدرب واحد
+      const instructorHTML = data.instructors ? 
+        data.instructors.map(instructor => `
+          <div class="instructor-info">
+            <img src="${instructor.image}" alt="${instructor.name}" class="instructor-image">
+            <div class="instructor-details">
+              <h4>${instructor.name}</h4>
+              <p>${instructor.bio}</p>
+            </div>
+          </div>
+        `).join("")
+        :
+        `<div class="instructor-info">
+          <img src="${data.instructor.image}" alt="${data.instructor.name}" class="instructor-image">
+          <div class="instructor-details">
+            <h4>${data.instructor.name}</h4>
+            <p>${data.instructor.bio}</p>
+          </div>
+        </div>`;
+
+      modalBody.innerHTML = `
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">${type}</h3>
+        <h2 style="margin-bottom: 1.5rem; color: var(--text-primary);">${title}</h2>
+        
+        <div class="modal-details">
+          <div class="detail-item">
+            <div class="detail-label">مدة الدورة</div>
+            <div class="detail-value">${data.duration}</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">الرسوم</div>
+            <div class="detail-value">${data.fees}</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">المقاعد المتاحة</div>
+            <div class="detail-value">${data.seats}</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">نوع الحضور</div>
+            <div class="detail-value">${data.attendance}</div>
+          </div>
+        </div>
+  
+        <div class="course-schedule">
+          <h4 class="schedule-title">مواعيد الدورة</h4>
+          <ul class="schedule-list">
+            ${scheduleHTML}
+          </ul>
+        </div>
+  
+        <div class="instructors-section">
+          <h4 class="instructors-title" style="margin-bottom: 1rem;">المدربون</h4>
+          ${instructorHTML}
+        </div>
+  
+        <a href="${data.link}" target="_blank" class="register-btn" style="margin-top: 2rem; display: inline-block; text-align: center;">التسجيل</a>
+      `;
+
+      modal.classList.add("show");
+    });
+  });
+
+  document.querySelector(".modal-close").addEventListener("click", () => {
+    document.querySelector(".modal").classList.remove("show");
+  });
+
+  document.querySelector(".modal").addEventListener("click", (e) => {
+    if (e.target === document.querySelector(".modal")) {
+      document.querySelector(".modal").classList.remove("show");
+    }
+  });
+  </script>
+
 
      <!-- Coming Soon Section -->
-        <div class="coming-soon" data-aos="fade-up">
+        <!-- <div class="coming-soon" data-aos="fade-up">
           <h1 class="coming-soon-title">ورش العمل</h1>
           <div class="coming-soon-card">
               <div class="coming-soon-text">انتظرونا قريباً</div>
@@ -356,7 +656,7 @@
                   ترقبوا الإعلان عن المواعيد الجديدة
               </div>
           </div>
-      </div>
+      </div> -->
  
    
   
